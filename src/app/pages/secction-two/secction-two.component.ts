@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-secction-two',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './secction-two.component.css'
 })
 export class SecctionTwoComponent {
+
+  constructor(private router: Router) {}
+
+  goToNextSeccion() {
+    this.router.navigateByUrl('/home/secctionThree');
+  }
 
 }

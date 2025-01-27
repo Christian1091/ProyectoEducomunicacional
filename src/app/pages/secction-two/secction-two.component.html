@@ -1,1 +1,35 @@
-<p>secction-two works!</p>
+<section>
+  <h2>¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</h2>
+
+  <form>
+      <label>
+          <input type="radio" name="destino" value="Trabajo"> 0 < 1 km
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Estudios"> 1 < 2 km
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Actividades Fisicas"> 2 > 4 km
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Visita Familiares/Amigos"> 4 > 6 km
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Medico"> 6 > 8 km
+      </label><br>
+
+      <label>
+        <input type="radio" name="destino" value="Medico"> 8 > 10 km
+    </label><br>
+
+      <label for="kilometros">Otros:</label>
+      <input type="number" id="kilometros" name="kilometros" placeholder="Introduce los kilómetros" required>
+      <br><br>
+
+      <button (click)="goToNextSeccion()">Siguiente</button>
+  </form>
+</section>

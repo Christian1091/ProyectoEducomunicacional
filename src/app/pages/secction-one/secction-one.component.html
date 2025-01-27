@@ -1,1 +1,26 @@
-<p>secction-one works!</p>
+<section>
+  <h2>¿A dónde sueles dirigirte durante la semana habitualmente?</h2>
+  <form>
+      <label>
+          <input type="radio" name="destino" value="Trabajo"> Trabajo
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Estudios"> Estudios
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Actividades Fisicas"> Actividades Físicas
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Visita Familiares/Amigos"> Visita Familiares/Amigos
+      </label><br>
+
+      <label>
+          <input type="radio" name="destino" value="Medico"> Médico
+      </label><br>
+
+      <button (click)="goToNextSeccion()">Siguiente</button>
+  </form>
+</section>
