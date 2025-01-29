@@ -1,35 +1,45 @@
-<section>
-  <h2>¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</h2>
+<form>
+  <div class="plataforma-container">
+    <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
 
-  <form>
-      <label>
-          <input type="radio" name="destino" value="Trabajo"> 0 < 1 km
-      </label><br>
+    <!-- preguntas.component.html -->
+    <div class="card-container">
+      <div class="card">
+        <div class="card-body">
+          <div class="radio-group">
+            <input type="radio" id="destino_1" value="Destino_1">
+            <label for="destino_1">0 < 1 km</label>
 
-      <label>
-          <input type="radio" name="destino" value="Estudios"> 1 < 2 km
-      </label><br>
+            <input type="radio" id="destino_2" value="Destino_2">
+            <label for="destino_2">1 < 2 km</label>
 
-      <label>
-          <input type="radio" name="destino" value="Actividades Fisicas"> 2 > 4 km
-      </label><br>
+            <input type="radio" id="destino_4" value="Destino_4">
+            <label for="destino_4">2 < 4 km</label>
 
-      <label>
-          <input type="radio" name="destino" value="Visita Familiares/Amigos"> 4 > 6 km
-      </label><br>
+            <input type="radio" id="destino_6" value="Destino_6">
+            <label for="destino_6">4 < 6 km</label>
 
-      <label>
-          <input type="radio" name="destino" value="Medico"> 6 > 8 km
-      </label><br>
+            <input type="radio" id="destino_8" value="Destino_8">
+            <label for="destino_8">6 < 8 km</label>
 
-      <label>
-        <input type="radio" name="destino" value="Medico"> 8 > 10 km
-    </label><br>
+            <input type="radio" id="destino_10" value="Destino_10">
+            <label for="destino_10">8 < 10 km</label>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <label for="kilometros">Otros:</label>
-      <input type="number" id="kilometros" name="kilometros" placeholder="Introduce los kilómetros" required>
-      <br><br>
+    <!-- Botones en la parte inferior -->
+    <div class="botones">
+      <button (click)="goBackSeccionOne()" class="boton-home">
+        <span class="material-icons">arrow_back</span>
+      </button>
+      <button (click)="goToNextSeccionThree()" class="boton-siguiente">
+        <span class="material-icons">arrow_forward</span>
+      </button>
+    </div>
 
-      <button (click)="goToNextSeccion()">Siguiente</button>
-  </form>
-</section>
+  </div>
+
+</form>
+

@@ -1,25 +1,37 @@
 <form>
-<div class="plataforma-container">
-
-   <!-- Pregunta con opciones de radio buttons -->
-  <div class="pregunta">
+  <div class="plataforma-container">
     <p class="titulo">¿A dónde sueles dirigirte durante la semana habitualmente?</p>
-    <label><input type="radio" name="destino" value="trabajo"> Trabajo</label><br>
-    <label><input type="radio" name="destino" value="estudios"> Estudios</label><br>
-    <label><input type="radio" name="destino" value="actividad-fisica"> Actividades Físicas</label><br>
-    <label><input type="radio" name="destino" value="familia-amigos"> Visita Familiares/Amigos</label><br>
-    <label><input type="radio" name="destino" value="medico"> Médico</label>
-  </div>
 
-  <!-- Botones en la parte inferior -->
-  <div class="botones">
-    <button (click)="goBackSeccionHome()" class="boton-home">
-      <span class="material-icons">home</span>
-    </button>
-    <button (click)="goToNextSeccionTwo()" class="boton-siguiente">
-      <span class="material-icons">arrow_forward</span>
-    </button>
-  </div>
+    <!-- preguntas.component.html -->
+    <div class="card-container">
+      <div class="card">
+        <div class="card-body">
+          <div class="radio-group">
+            <input type="radio" id="trabajo" name="actividad" value="Trabajo">
+            <label for="trabajo">Trabajo</label>
 
-</div>
+            <input type="radio" id="estudios" name="actividad" value="Estudios">
+            <label for="estudios">Estudios</label>
+
+            <input type="radio" id="actividad-fisica" name="actividad" value="Actividad Fisica">
+            <label for="actividad-fisica">Actividad Física</label>
+
+            <input type="radio" id="visita" name="actividad" value="Visita Familiares/Amigos">
+            <label for="visita">Visita Familiares/Amigos</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones en la parte inferior -->
+    <div class="botones">
+      <button (click)="goBackSeccionHome()" class="boton-home">
+        <span class="material-icons">home</span>
+      </button>
+      <button (click)="goToNextSeccionTwo()" class="boton-siguiente">
+        <span class="material-icons">arrow_forward</span>
+      </button>
+    </div>
+
+  </div>
 </form>

@@ -10,8 +10,12 @@ export class SecctionTwoComponent {
 
   constructor(private router: Router) {}
 
-  goToNextSeccion() {
+  goToNextSeccionThree() {
     this.router.navigateByUrl('/home/secctionThree');
+  }
+
+  goBackSeccionOne() {
+    this.router.navigateByUrl('/home/secctionOne');
   }
 
 }
