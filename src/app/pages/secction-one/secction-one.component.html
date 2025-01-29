@@ -1,26 +1,25 @@
-<section>
-  <h2>¿A dónde sueles dirigirte durante la semana habitualmente?</h2>
-  <form>
-      <label>
-          <input type="radio" name="destino" value="Trabajo"> Trabajo
-      </label><br>
+<form>
+<div class="plataforma-container">
 
-      <label>
-          <input type="radio" name="destino" value="Estudios"> Estudios
-      </label><br>
+   <!-- Pregunta con opciones de radio buttons -->
+  <div class="pregunta">
+    <p class="titulo">¿A dónde sueles dirigirte durante la semana habitualmente?</p>
+    <label><input type="radio" name="destino" value="trabajo"> Trabajo</label><br>
+    <label><input type="radio" name="destino" value="estudios"> Estudios</label><br>
+    <label><input type="radio" name="destino" value="actividad-fisica"> Actividades Físicas</label><br>
+    <label><input type="radio" name="destino" value="familia-amigos"> Visita Familiares/Amigos</label><br>
+    <label><input type="radio" name="destino" value="medico"> Médico</label>
+  </div>
 
-      <label>
-          <input type="radio" name="destino" value="Actividades Fisicas"> Actividades Físicas
-      </label><br>
+  <!-- Botones en la parte inferior -->
+  <div class="botones">
+    <button (click)="goBackSeccionHome()" class="boton-home">
+      <span class="material-icons">home</span>
+    </button>
+    <button (click)="goToNextSeccionTwo()" class="boton-siguiente">
+      <span class="material-icons">arrow_forward</span>
+    </button>
+  </div>
 
-      <label>
-          <input type="radio" name="destino" value="Visita Familiares/Amigos"> Visita Familiares/Amigos
-      </label><br>
-
-      <label>
-          <input type="radio" name="destino" value="Medico"> Médico
-      </label><br>
-
-      <button (click)="goToNextSeccion()">Siguiente</button>
-  </form>
-</section>
+</div>
+</form>

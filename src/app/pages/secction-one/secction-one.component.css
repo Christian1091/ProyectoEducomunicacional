@@ -1,3 +1,120 @@
-h2 {
+/* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
+.plataforma-container {
+  height: 100vh;  /* Ocupa el 100% de la altura de la ventana */
+  background: linear-gradient(to right, #a8e6cf, #ffffff); /* Fondo ecológico mezclado con blanco */
+  display: flex;  /* Flexbox para organizar el contenido */
+  flex-direction: column;  /* Los elementos se organizan de arriba hacia abajo */
+  justify-content: center;  /* Centra el contenido verticalmente */
+  align-items: center;  /* Centra el contenido horizontalmente */
+  text-align: left;  /* Alinea el texto a la izquierda */
+  padding: 20px;
+  box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño del contenedor */
+  position: relative;  /* Necesario para el posicionamiento de los botones */
+}
+
+.titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #388e3c;
+  text-transform: uppercase;
   text-align: center;
+  animation: fadeIn 2s ease-out; /* Animación de aparición */
+  margin-bottom: 20px;
+}
+
+/* Estilo para la sección de la pregunta con radio buttons */
+.pregunta {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.pregunta label {
+  display: block;
+  margin: 8px 0;
+}
+
+.pregunta input {
+  margin-right: 10px;
+}
+
+/* Estilo para los botones */
+.botones {
+  position: fixed;
+  bottom: 30px;  /* Los botones estarán a 30px desde el borde inferior */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;  /* Distribuye los botones a la izquierda y derecha */
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.boton-siguiente,
+.boton-home {
+  background-color: #388e3c;  /* Fondo verde ecológico */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-siguiente:hover,
+.boton-home:hover {
+  background-color: #2e7d32;  /* Color más oscuro cuando pasa el ratón */
+  transform: scale(1.05);
+}
+
+/* Responsividad para pantallas medianas (por ejemplo, tabletas) */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 2rem;  /* Reducir el tamaño del título */
+  }
+
+  .pregunta {
+    font-size: 1rem;  /* Reducir el tamaño de la pregunta */
+  }
+
+  /* Ajustar el tamaño de los botones para pantallas medianas */
+  .boton-siguiente,
+  .boton-home {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsividad para pantallas pequeñas (teléfonos móviles) */
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.5rem;  /* Reducir el tamaño del título */
+  }
+
+  .pregunta {
+    font-size: 0.9rem;  /* Reducir el tamaño de la pregunta */
+  }
+
+  /* Ajustar el tamaño de los botones para pantallas pequeñas */
+  .boton-siguiente,
+  .boton-home {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Definir la animación */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
