@@ -1,0 +1,21 @@
+/* Contenedor principal */
+.image-container {
+  display: flex;
+  flex-direction: column; /* Organiza las filas verticalmente */
+  gap: 20px; /* Espacio entre las filas */
+  align-items: center; /* Centra las filas horizontalmente */
+}
+
+/* Fila de imágenes */
+.row {
+  display: flex;
+  gap: 15px; /* Espacio entre las imágenes */
+  justify-content: center; /* Centra las imágenes en la fila */
+}
+
+/* Estilo para las imágenes */
+img {
+  width: 150px;  /* Ajusta el tamaño de las imágenes */
+  height: auto;  /* Mantiene la relación de aspecto */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+}
