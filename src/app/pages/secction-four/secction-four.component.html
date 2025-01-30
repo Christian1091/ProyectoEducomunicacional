@@ -1,26 +1,16 @@
-<!-- app.component.html -->
-<div class="form-container">
-  <form>
-    <!-- Grupo de radio buttons -->
-    <div class="radio-buttons">
-      <label>
-        <input type="radio" name="option" value="yes" [(ngModel)]="inputStatus" />
-        Habilitar Input
-      </label>
-      <label>
-        <input type="radio" name="option" value="no" [(ngModel)]="inputStatus" />
-        Deshabilitar Input
-      </label>
-      <label>
-        <input type="radio" name="option" value="other" [(ngModel)]="inputStatus" />
-        Otra opción
-      </label>
-    </div>
+<div>
+  <label>
+    <input type="radio" name="opcion" value="opcion1" [(ngModel)]="selectedOption" /> Opción 1
+  </label>
+  <label>
+    <input type="radio" name="opcion" value="opcion2" [(ngModel)]="selectedOption" /> Opción 2
+  </label>
+  <label>
+    <input type="radio" name="opcion" value="opcion3" [(ngModel)]="selectedOption" /> Opción 3
+  </label>
+</div>
 
-    <!-- Input habilitado/deshabilitado según el estado del radio button -->
-    <div class="input-container" *ngIf="inputStatus === 'yes'">
-      <label for="userInput">Ingrese los datos:</label>
-      <input id="userInput" type="text" placeholder="Ingresa algo..." />
-    </div>
-  </form>
+<div *ngIf="selectedOption === 'opcion3'">
+  <label for="inputExtra">Ingrese un valor adicional:</label>
+  <input type="text" id="inputExtra" [(ngModel)]="extraInput" />
 </div>

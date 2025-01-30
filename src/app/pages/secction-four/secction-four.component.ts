@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './secction-four.component.css'
 })
 export class SecctionFourComponent {
-   // Estado de la selección del radio button
-   inputStatus: string = 'no'; // 'yes', 'no', 'other'
-
+  selectedOption: string = '';
+  extraInput: string = '';
 }
