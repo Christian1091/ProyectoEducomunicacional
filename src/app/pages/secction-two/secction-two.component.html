@@ -7,24 +7,34 @@
       <div class="card">
         <div class="card-body">
           <div class="radio-group">
-            <input type="radio" id="cero" name="actividad" value="CeroUno">
+            <input type="radio" id="cero" name="option" value="no" [(ngModel)]="enableInput"/>
             <label for="cero">0 < 1 km</label>
 
-            <input type="radio" id="uno" name="actividad" value="UnoDos">
+            <input type="radio" id="uno" name="option" value="no"/>
             <label for="uno">1 < 2 km</label>
 
-            <input type="radio" id="dos" name="actividad" value="DosCuatro">
+            <input type="radio" id="dos" name="option" value="no"/>
             <label for="dos">2 < 4 km</label>
 
-            <input type="radio" id="cuatro" name="actividad" value="CuatroSeis">
+            <input type="radio" id="cuatro" name="option" value="no"/>
             <label for="cuatro">4 < 6 km</label>
 
-            <input type="radio" id="seis" name="actividad" value="SeisOcho">
+            <input type="radio" id="seis" name="option" value="no"/>
             <label for="seis">6 < 8 km</label>
 
-            <input type="radio" id="ocho" name="actividad" value="OchoDiez">
+            <input type="radio" id="ocho" name="option" value="no"/>
             <label for="ocho">8 < 10 km</label>
+
+            <input type="radio" id="otros" name="option" value="yes" [(ngModel)]="enableInput"/>
+            <label for="otros">Otro</label>
+
           </div>
+
+          <!-- Input habilitado/deshabilitado según la selección del radio button -->
+          <div *ngIf="enableInput === 'yes'">
+            <input id="userInput" type="text" placeholder="Ingresa km" />
+          </div>
+
         </div>
       </div>
     </div>

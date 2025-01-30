@@ -10,6 +10,8 @@ export class SecctionTwoComponent {
 
   constructor(private router: Router) {}
 
+  enableInput: string = 'no'; // Puede ser 'yes' o 'no'
+
   goToNextSeccionThree() {
     this.router.navigateByUrl('/home/secctionThree');
   }

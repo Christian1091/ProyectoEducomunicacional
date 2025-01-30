@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { SecctionTwoComponent } from './secction-two/secction-two.component';
 import { SecctionOneComponent } from './secction-one/secction-one.component';
 import { SecctionThreeComponent } from './secction-three/secction-three.component';
 import { SecctionFourComponent } from './secction-four/secction-four.component';
 import { PagesComponent } from './pages.component';
-
 
 @NgModule({
   declarations: [
@@ -27,6 +27,7 @@ import { PagesComponent } from './pages.component';
   imports: [
     CommonModule,
     RouterModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

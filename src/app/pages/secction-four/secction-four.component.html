@@ -1,16 +1,26 @@
-<!-- En tu componente Angular -->
-<div class="image-container">
-  <!-- Fila 1 de imágenes -->
-  <div class="row">
-    <img src="../../../assets/icons/scooter.png" alt="Scooter">
-    <img src="../../../assets/icons/autoElec.png" alt="Scooter">
-    <img src="../../../assets/icons/motoElec.png" alt="Scooter">
-  </div>
+<!-- app.component.html -->
+<div class="form-container">
+  <form>
+    <!-- Grupo de radio buttons -->
+    <div class="radio-buttons">
+      <label>
+        <input type="radio" name="option" value="yes" [(ngModel)]="inputStatus" />
+        Habilitar Input
+      </label>
+      <label>
+        <input type="radio" name="option" value="no" [(ngModel)]="inputStatus" />
+        Deshabilitar Input
+      </label>
+      <label>
+        <input type="radio" name="option" value="other" [(ngModel)]="inputStatus" />
+        Otra opción
+      </label>
+    </div>
 
-  <!-- Fila 2 de imágenes -->
-  <div class="row">
-    <img src="../../../assets/icons/bicicleta.png" alt="Scooter">
-    <img src="../../../assets/icons/carro.png" alt="Scooter">
-    <img src="../../../assets/icons/moto.png" alt="Scooter">
-  </div>
+    <!-- Input habilitado/deshabilitado según el estado del radio button -->
+    <div class="input-container" *ngIf="inputStatus === 'yes'">
+      <label for="userInput">Ingrese los datos:</label>
+      <input id="userInput" type="text" placeholder="Ingresa algo..." />
+    </div>
+  </form>
 </div>

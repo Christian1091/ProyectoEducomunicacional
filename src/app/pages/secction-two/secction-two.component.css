@@ -91,6 +91,22 @@ input[type="radio"]:checked + label:before {
   border-color: #0056b3;
 }
 
+/* Estilo para el input habilitado */
+input[type="text"] {
+  width: 20%;
+  padding: 5px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input::placeholder {
+  text-align: center; /* Centra el texto del placeholder */
+  color: #888; /* Puedes ajustar el color del placeholder si lo deseas */
+}
+
 /* Estilo para los botones */
 .botones {
   position: fixed;
