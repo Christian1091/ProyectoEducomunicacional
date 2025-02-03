@@ -1,53 +1,54 @@
 <form>
-  <div class="plataforma-container">
-    <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
+    <div class="plataforma-container">
+        <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
 
-    <!-- preguntas.component.html -->
-    <div class="card-container">
-      <div class="card">
-        <div class="card-body">
-          <div class="radio-group">
-            <input type="radio" id="cero" name="option" value="no" [(ngModel)]="enableInput"/>
-            <label for="cero">0 < 1 km</label>
+        <!-- preguntas.component.html -->
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="radio-group">
+                        <input type="radio" id="cero" name="option" value="no" [(ngModel)]="enableInput" />
+                        <label for="cero">0 < 1 km</label>
 
-            <input type="radio" id="uno" name="option" value="no"/>
-            <label for="uno">1 < 2 km</label>
+                        <input type="radio" id="uno" name="option" value="no" />
+                        <label for="uno">1 < 2 km</label>
 
-            <input type="radio" id="dos" name="option" value="no"/>
-            <label for="dos">2 < 4 km</label>
+                        <input type="radio" id="dos" name="option" value="no" />
+                        <label for="dos">2 < 4 km</label>
 
-            <input type="radio" id="cuatro" name="option" value="no"/>
-            <label for="cuatro">4 < 6 km</label>
+                        <input type="radio" id="cuatro" name="option" value="no" />
+                        <label for="cuatro">4 < 6 km</label>
 
-            <input type="radio" id="seis" name="option" value="no"/>
-            <label for="seis">6 < 8 km</label>
+                        <input type="radio" id="seis" name="option" value="no" />
+                        <label for="seis">6 < 8 km</label>
 
-            <input type="radio" id="ocho" name="option" value="no"/>
-            <label for="ocho">8 < 10 km</label>
+                        <input type="radio" id="ocho" name="option" value="no" />
+                        <label for="ocho">8 < 10 km</label>
 
-            <input type="radio" id="otros" name="option" value="yes" [(ngModel)]="enableInput"/>
-            <label for="otros">Otro</label>
+                        <input type="radio" id="otros" name="option" value="yes" [(ngModel)]="enableInput" />
+                        <label for="otros">Otro</label>
 
-          </div>
+                    </div>
 
-          <!-- Input habilitado/deshabilitado según la selección del radio button -->
-          <div *ngIf="enableInput === 'yes'">
-            <input id="userInput" type="text" placeholder="Ingresa km" />
-          </div>
+                    <!-- Input habilitado/deshabilitado según la selección del radio button -->
+                    <div *ngIf="enableInput === 'yes'">
+                        <input id="userInput" type="text" [(ngModel)]="valorOtro" name="otroValor" placeholder="Ingresa km" />
+                    </div>
+                    <p> Resultado: {{ resultado }} km</p>
 
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Botones en la parte inferior -->
-    <div class="botones">
-      <button (click)="goBackSeccionOne()" class="boton-home">
+        <!-- Botones en la parte inferior -->
+        <div class="botones">
+            <button (click)="goBackSeccionOne()" class="boton-home">
         <span class="material-icons">arrow_back</span>
       </button>
-      <button (click)="goToNextSeccionThree()" class="boton-siguiente">
+            <button (click)="goToNextSeccionThree()" class="boton-siguiente">
         <span class="material-icons">arrow_forward</span>
       </button>
-    </div>
+        </div>
 
-  </div>
+    </div>
 </form>

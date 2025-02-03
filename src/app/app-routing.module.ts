@@ -3,8 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { PagesRoutingModule } from './pages/pages.routing';
 
-import { HomeComponent } from './pages/home/home.component';
-
 const routes: Routes = [
 
   { path:'', redirectTo: '/home', pathMatch: 'full'},
@@ -14,7 +12,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    PagesRoutingModule
+    PagesRoutingModule,
   ],
   exports: [RouterModule]
 })

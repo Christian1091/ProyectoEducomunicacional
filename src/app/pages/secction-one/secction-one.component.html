@@ -1,37 +1,38 @@
-<form>
-  <div class="plataforma-container">
-    <p class="titulo">¿A dónde sueles dirigirte durante la semana habitualmente?</p>
+<form (ngSubmit)="onSubmit()" #formulario="ngForm">
+    <div class="plataforma-container">
+        <p class="titulo">¿A dónde sueles dirigirte durante la semana habitualmente?</p>
 
-    <!-- preguntas.component.html -->
-    <div class="card-container">
-      <div class="card">
-        <div class="card-body">
-          <div class="radio-group">
-            <input type="radio" id="trabajo" name="actividad" value="Trabajo">
-            <label for="trabajo">Trabajo</label>
+        <!-- preguntas.component.html -->
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="radio-group">
+                        <input type="radio" id="trabajo" name="actividad" [(ngModel)]="selectedOption" value="Trabajo">
+                        <label for="trabajo">Trabajo</label>
 
-            <input type="radio" id="estudios" name="actividad" value="Estudios">
-            <label for="estudios">Estudios</label>
+                        <input type="radio" id="estudios" name="actividad" [(ngModel)]="selectedOption" value="Estudios">
+                        <label for="estudios">Estudios</label>
 
-            <input type="radio" id="actividad-fisica" name="actividad" value="Actividad Fisica">
-            <label for="actividad-fisica">Actividad Física</label>
+                        <input type="radio" id="actividad-fisica" name="actividad" [(ngModel)]="selectedOption" value="Actividad Fisica">
+                        <label for="actividad-fisica">Actividad Física</label>
 
-            <input type="radio" id="visita" name="actividad" value="Visita Familiares/Amigos">
-            <label for="visita">Visita Familiares/Amigos</label>
-          </div>
+                        <input type="radio" id="visita" name="actividad" [(ngModel)]="selectedOption" value="Visita Familiares/Amigos">
+                        <label for="visita">Visita Familiares/Amigos</label>
+
+                        <!-- <button type="submit">Enviar</button> -->
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Botones en la parte inferior -->
-    <div class="botones">
-      <button (click)="goBackSeccionHome()" class="boton-home">
-        <span class="material-icons">home</span>
-      </button>
-      <button (click)="goToNextSeccionTwo()" class="boton-siguiente">
-        <span class="material-icons">arrow_forward</span>
-      </button>
+        <!-- Botones en la parte inferior -->
+        <div class="botones">
+            <button (click)="goBackSeccionHome()" class="boton-home">
+              <span class="material-icons">home</span>
+            </button>
+            <button type="submit" class="boton-siguiente">
+              <span class="material-icons">arrow_forward</span>
+            </button>
+        </div>
     </div>
-
-  </div>
 </form>

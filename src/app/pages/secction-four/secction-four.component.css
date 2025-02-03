@@ -1,37 +1,63 @@
-/* app.component.css */
-.form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+/* Contenedor principal, se centra y organiza las columnas */
 
-.option {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-input[type="radio"] {
-  margin-right: 10px;
-}
-
-span {
-  font-weight: bold;
-  color: #007bff; /* Color azul para resaltar el resultado */
-  margin-left: 10px;
-}
-
-@media (max-width: 768px) {
-  .form-container {
-    padding: 15px;
-  }
-
-  .option {
-    flex-direction: column;
+.section-container {
+    display: flex;
+    justify-content: center;
+    /* Centra las columnas horizontalmente */
     align-items: flex-start;
-  }
+    /* Alinea las columnas en la parte superior */
+    gap: 20px;
+    /* Espacio entre las columnas */
+    padding: 20px;
+    height: 100vh;
+    /* La altura ocupa toda la pantalla */
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    /* Permite que las columnas se acomoden en pantallas pequeñas */
+    margin-top: 100px;
+}
+
+
+/* Estilo para la columna de imágenes */
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    /* Las imágenes se apilan verticalmente */
+    gap: 10px;
+    /* Espacio entre las imágenes */
+    flex: 1 1 250px;
+    /* La columna de imágenes ocupa un mínimo de 250px */
+    max-width: 120px;
+    /* Limita el ancho máximo de la columna */
+}
+
+.image-column img {
+    width: 100%;
+    /* Las imágenes ocupan el 100% del ancho de su contenedor */
+    height: auto;
+    /* Mantiene la proporción de la imagen */
+    border-radius: 8px;
+    /* Bordes redondeados para las imágenes */
+    object-fit: cover;
+    /* Asegura que las imágenes no se deformen */
+}
+
+
+/* Estilo para la columna de etiquetas */
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+    /* Las etiquetas se apilan verticalmente */
+    gap: 15px;
+    /* Espacio entre las etiquetas */
+    flex: 1 1 250px;
+    /* La columna de etiquetas ocupa un mínimo de 250px */
+    max-width: 300px;
+    /* Limita el ancho máximo de la columna */
+}
+
+.label {
+    font-size: 18px;
 }

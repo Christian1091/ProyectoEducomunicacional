@@ -1,16 +1,14 @@
-<div>
-  <label>
-    <input type="radio" name="opcion" value="opcion1" [(ngModel)]="selectedOption" /> Opción 1
-  </label>
-  <label>
-    <input type="radio" name="opcion" value="opcion2" [(ngModel)]="selectedOption" /> Opción 2
-  </label>
-  <label>
-    <input type="radio" name="opcion" value="opcion3" [(ngModel)]="selectedOption" /> Opción 3
-  </label>
-</div>
-
-<div *ngIf="selectedOption === 'opcion3'">
-  <label for="inputExtra">Ingrese un valor adicional:</label>
-  <input type="text" id="inputExtra" [(ngModel)]="extraInput" />
+<div class="section-container">
+    <div class="image-column">
+        <img src="../../../assets/icons/scooter.png" alt="Scooter">
+        <img src="../../../assets/icons/scooter.png" alt="Scooter">
+        <img src="../../../assets/icons/scooter.png" alt="Scooter">
+        <img src="../../../assets/icons/scooter.png" alt="Scooter">
+    </div>
+    <div class="text-column">
+        <p class="label">Etiqueta 1: Valor 1</p>
+        <p class="label">Etiqueta 2: Valor 2</p>
+        <p class="label">Etiqueta 3: Valor 3</p>
+        <p class="label">Etiqueta 4: Valor 4</p>
+    </div>
 </div>
