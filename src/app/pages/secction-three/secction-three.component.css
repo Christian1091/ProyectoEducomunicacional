@@ -62,9 +62,13 @@
 
 .input-container {
     position: relative;
-    height: 10rem;
-    width: 10rem;
+    height: 11rem;
+    width: 11rem;
     margin: 0.5rem;
+}
+
+.texto {
+    margin-top: 15px;
 }
 
 .input-container input {

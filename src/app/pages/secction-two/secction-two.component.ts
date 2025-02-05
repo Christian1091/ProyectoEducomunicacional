@@ -26,20 +26,24 @@ export class SecctionTwoComponent {
 
   goToNextSeccionThree() {
     //this.router.navigateByUrl('/home/secctionThree');
-    this.calcularValor();
+    //this.calcularValor();
   }
 
   goBackSeccionOne() {
     this.router.navigateByUrl('/home/secctionOne');
   }
 
-  ngOnInit() {
-    // Acceder a los datos enviados a través del router state
-    const navigation = this.router.getCurrentNavigation();
-    if (navigation?.extras.state) {
-      this.selectedOption = navigation.extras.state['selectedOption'];
-    }
-    //console.log('Valor seleccionado: ' + this.selectedOption);
+  onSubmit() {
+    // Aquí obtenemos el valor seleccionado del radio button
+    // Ya que estamos usando ngModel, lo podemos acceder directamente
+    console.log("Ha seleccionado la opcion ==> " + this.selectedOption);
+    const result = parseInt(this.selectedOption) * 2;
+    console.log("Calculado IDA - VUELTA ==> " + result);
+    // Navegamos a la siguiente sección, pasando los datos por el router
+    // De preferencia, utiliza un servicio para almacenar datos globalmente.
+    this.router.navigate(['/home/secctionThree'], {
+      state: { selectedOption: this.selectedOption },
+    });
   }
 
 }

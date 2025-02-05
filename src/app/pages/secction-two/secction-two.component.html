@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="onSubmit()" #formulario="ngForm">
     <div class="plataforma-container">
         <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
 
@@ -7,23 +7,23 @@
             <div class="card">
                 <div class="card-body">
                     <div class="radio-group">
-                        <input type="radio" id="cero" name="option" value="no" [(ngModel)]="enableInput" />
+                        <input type="radio" id="cero" name="option" value="1" [(ngModel)]="selectedOption" />
                         <label for="cero">0 < 1 km</label>
 
-                        <input type="radio" id="uno" name="option" value="no" />
-                        <label for="uno">1 < 2 km</label>
+                        <input type="radio" id="uno" name="option" value="2" [(ngModel)]="selectedOption">
+                        <label for="uno">1 > 2 km</label>
 
-                        <input type="radio" id="dos" name="option" value="no" />
-                        <label for="dos">2 < 4 km</label>
+                        <input type="radio" id="dos" name="option" value="4" [(ngModel)]="selectedOption">
+                        <label for="dos">2 > 4 km</label>
 
-                        <input type="radio" id="cuatro" name="option" value="no" />
-                        <label for="cuatro">4 < 6 km</label>
+                        <input type="radio" id="cuatro" name="option" value="6" [(ngModel)]="selectedOption">
+                        <label for="cuatro">4 > 6 km</label>
 
-                        <input type="radio" id="seis" name="option" value="no" />
-                        <label for="seis">6 < 8 km</label>
+                        <input type="radio" id="seis" name="option" value="8" [(ngModel)]="selectedOption">
+                        <label for="seis">6 > 8 km</label>
 
-                        <input type="radio" id="ocho" name="option" value="no" />
-                        <label for="ocho">8 < 10 km</label>
+                        <input type="radio" id="ocho" name="option" value="10" [(ngModel)]="selectedOption">
+                        <label for="ocho">8 > 10 km</label>
 
                         <input type="radio" id="otros" name="option" value="yes" [(ngModel)]="enableInput" />
                         <label for="otros">Otro</label>
@@ -45,7 +45,7 @@
             <button (click)="goBackSeccionOne()" class="boton-home">
         <span class="material-icons">arrow_back</span>
       </button>
-            <button (click)="goToNextSeccionThree()" class="boton-siguiente">
+            <button type="submit" class="boton-siguiente">
         <span class="material-icons">arrow_forward</span>
       </button>
         </div>
