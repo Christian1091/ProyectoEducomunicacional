@@ -1,93 +1,134 @@
 /* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
+
 .plataforma-container {
-  height: 100vh;  /* Ocupa el 100% de la altura de la ventana */
-  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* Fondo ecológico mezclado con blanco */
-  display: flex;  /* Flexbox para organizar el contenido */
-  flex-direction: column;  /* Los elementos se organizan de arriba hacia abajo */
-  text-align: left;  /* Alinea el texto a la izquierda */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño del contenedor */
+    height: 100vh;
+    /* Ocupa el 100% de la altura de la ventana */
+    background: linear-gradient(to right, #a8e6cf, #dcedc1);
+    /* Fondo ecológico mezclado con blanco */
+    display: flex;
+    /* Flexbox para organizar el contenido */
+    flex-direction: column;
+    /* Los elementos se organizan de arriba hacia abajo */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño del contenedor */
 }
+
 
 /* Título en mayúsculas y centrado */
+
 .titulo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  color: #388e3c;  /* Color verde para el título */
-  text-align: center;  /* El título está centrado */
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #388e3c;
+    /* Color verde para el título */
+    text-align: center;
+    /* El título está centrado */
 }
+
 
 /* Estilo para el resumen */
+
 .resumen {
-  font-size: 1.2rem;
-  color: #333;
-  line-height: 1.6;
-  max-width: 800px;  /* Ancho máximo para una buena presentación en pantallas grandes */
-  text-align: justify;  /* Justificar el texto para una mejor lectura */
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    /* Ancho máximo para una buena presentación en pantallas grandes */
+    text-align: justify;
+    /* Justificar el texto para una mejor lectura */
 }
+
 
 /* Estilo para el botón ecológico */
+
 .boton-ecologico {
-  position: fixed;  /* Posiciona el botón de forma fija */
-  bottom: 30px;  /* 30px de distancia desde el borde inferior */
-  left: 50%;  /* Centrado horizontalmente */
-  transform: translateX(-50%);  /* Ajusta el posicionamiento para centrarlo exactamente */
-  background-color: #388e3c;  /* Fondo verde ecológico */
-  color: white;  /* Color de texto blanco */
-  padding: 12px 30px;  /* Tamaño del botón */
-  border-radius: 25px;  /* Bordes redondeados */
-  font-size: 1.1rem;  /* Tamaño de la fuente */
-  font-weight: bold;
-  border: none;  /* Sin borde */
-  cursor: pointer;  /* Cambia el cursor al pasar sobre el botón */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Sombra para darle profundidad */
-  transition: background-color 0.3s ease, transform 0.3s ease;  /* Transiciones suaves */
+    position: fixed;
+    /* Posiciona el botón de forma fija */
+    bottom: 30px;
+    /* 30px de distancia desde el borde inferior */
+    left: 50%;
+    /* Centrado horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta el posicionamiento para centrarlo exactamente */
+    background-color: #388e3c;
+    /* Fondo verde ecológico */
+    color: white;
+    /* Color de texto blanco */
+    padding: 12px 30px;
+    /* Tamaño del botón */
+    border-radius: 25px;
+    /* Bordes redondeados */
+    font-size: 1.1rem;
+    /* Tamaño de la fuente */
+    font-weight: bold;
+    border: none;
+    /* Sin borde */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para darle profundidad */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Transiciones suaves */
 }
+
 
 /* Efecto de hover en el botón */
+
 .boton-ecologico:hover {
-  background-color: #2e7d32;  /* Color de fondo más oscuro al pasar el ratón */
-  transform: translateX(-50%) scale(1.05);  /* Agranda ligeramente el botón */
+    background-color: #2e7d32;
+    /* Color de fondo más oscuro al pasar el ratón */
+    transform: translateX(-50%) scale(1.05);
+    /* Agranda ligeramente el botón */
 }
+
 
 /* Responsividad para pantallas medianas (por ejemplo, tabletas) */
+
 @media (max-width: 768px) {
-  .plataforma-container {
-    padding: 15px;  /* Reducir el padding en pantallas más pequeñas */
-  }
-
-  .titulo {
-    font-size: 2rem;  /* Reducir el tamaño del título */
-  }
-
-  .resumen {
-    font-size: 1rem;  /* Reducir el tamaño del texto */
-    max-width: 90%;  /* Aumentar el ancho del contenido para pantallas más pequeñas */
-  }
+    .plataforma-container {
+        padding: 15px;
+        /* Reducir el padding en pantallas más pequeñas */
+    }
+    .titulo {
+        font-size: 2rem;
+        /* Reducir el tamaño del título */
+    }
+    .resumen {
+        font-size: 1rem;
+        /* Reducir el tamaño del texto */
+        max-width: 90%;
+        /* Aumentar el ancho del contenido para pantallas más pequeñas */
+    }
 }
+
 
 /* Responsividad para pantallas pequeñas (teléfonos móviles) */
+
 @media (max-width: 480px) {
-  .titulo {
-    font-size: 1.5rem;  /* Reducir el tamaño del título aún más */
-  }
-
-  .resumen {
-    font-size: 0.9rem;  /* Reducir el tamaño del texto */
-  }
-
-  .plataforma-container {
-    padding: 10px;  /* Reducir el padding en pantallas muy pequeñas */
-  }
-
-   /* Ajustar el tamaño del botón para pantallas muy pequeñas */
-   .boton-ecologico {
-    padding: 8px 20px;  /* Reducir aún más el tamaño del botón */
-    font-size: 0.9rem;  /* Reducir el tamaño de la fuente */
-  }
+    .titulo {
+        font-size: 1.5rem;
+        /* Reducir el tamaño del título aún más */
+    }
+    .resumen {
+        font-size: 0.9rem;
+        /* Reducir el tamaño del texto */
+    }
+    .plataforma-container {
+        padding: 10px;
+        /* Reducir el padding en pantallas muy pequeñas */
+    }
+    /* Ajustar el tamaño del botón para pantallas muy pequeñas */
+    .boton-ecologico {
+        padding: 8px 20px;
+        /* Reducir aún más el tamaño del botón */
+        font-size: 0.9rem;
+        /* Reducir el tamaño de la fuente */
+    }
 }
-
