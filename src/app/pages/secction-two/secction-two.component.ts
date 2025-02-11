@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-secction-two',
@@ -8,9 +9,10 @@ import { Router } from '@angular/router';
 })
 export class SecctionTwoComponent {
 
-  selectedOption: string = '';
+  selectedOptionKm: number = 0;
+  resultKm: number = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
 
   enableInput: string = 'no'; // Puede ser 'yes' o 'no'
 
@@ -18,14 +20,17 @@ export class SecctionTwoComponent {
 
   resultado : number = 0;
 
-  calcularValor() {
-    this.resultado = this.valorOtro * 2;
-    console.log( this.resultado);
+  enviar() {
+    if(this.selectedOptionKm !== null) {
+      this.resultKm = this.selectedOptionKm * 2;
+      this.dataService.saveDataTwo({kilometro: this.resultKm});
+      this.router.navigateByUrl('/home/secctionThree');
+    }
   }
 
 
   goToNextSeccionThree() {
-    //this.router.navigateByUrl('/home/secctionThree');
+    this.router.navigateByUrl('/home/secctionThree');
     //this.calcularValor();
   }
 
@@ -33,7 +38,7 @@ export class SecctionTwoComponent {
     this.router.navigateByUrl('/home/secctionOne');
   }
 
-  onSubmit() {
+  /*onSubmit() {
     // Aquí obtenemos el valor seleccionado del radio button
     // Ya que estamos usando ngModel, lo podemos acceder directamente
     console.log("Ha seleccionado la opcion ==> " + this.selectedOption);
@@ -44,6 +49,6 @@ export class SecctionTwoComponent {
     this.router.navigate(['/home/secctionThree'], {
       state: { selectedOption: this.selectedOption },
     });
-  }
+  }*/
 
 }

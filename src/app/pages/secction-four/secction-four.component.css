@@ -62,3 +62,40 @@
 .label {
     font-size: 18px;
 }
+
+
+/* Estilo para los botones */
+
+.botones {
+    position: fixed;
+    bottom: 30px;
+    /* Los botones estarán a 30px desde el borde inferior */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye los botones a la izquierda y derecha */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.boton-siguiente,
+.boton-home {
+    background-color: #388e3c;
+    /* Fondo verde ecológico */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.boton-siguiente:hover,
+.boton-home:hover {
+    background-color: #2e7d32;
+    /* Color más oscuro cuando pasa el ratón */
+    transform: scale(1.05);
+}

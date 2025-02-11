@@ -5,16 +5,33 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  private storedData: any = null;  // Variable privada para almacenar los datos
+  private datos = {
+    seccionOne: { destino:''},
+    seccionTwo: { kilometro: 0},
+    seccionThree: { transporte: ''},
+    seccionFour: { precioGasolina: 0, resultado2:'', resultado3:''},
+  }
 
   constructor() { }
 
-  //Metodo para almacenar los datos
-  setData(data:any){
-      this.storedData = data;
+
+  saveDataOne(datos: {destino: string}) {
+    this.datos.seccionOne = datos;
   }
 
-  getData(): any {
-    return this.storedData;
+  saveDataTwo(datos: {kilometro: number}) {
+    this.datos.seccionTwo = datos;
+  }
+
+  saveDataThree(datos: {transporte: string}) {
+    this.datos.seccionThree = datos;
+  }
+
+  saveDataFour(datos: {precioGasolina:number, resultado2:string, resultado3:string}) {
+    this.datos.seccionFour = datos;
+  }
+
+  obtenerData() {
+    return this.datos;
   }
 }

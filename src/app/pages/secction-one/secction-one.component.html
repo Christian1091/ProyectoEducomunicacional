@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" #formulario="ngForm">
+<form>
     <div class="plataforma-container">
         <p class="titulo">¿A dónde sueles dirigirte durante la semana habitualmente?</p>
 
@@ -7,16 +7,16 @@
             <div class="card">
                 <div class="card-body">
                     <div class="radio-group">
-                        <input type="radio" id="trabajo" name="actividad" [(ngModel)]="selectedOption" value="Trabajo">
+                        <input type="radio" id="trabajo" name="actividad" [(ngModel)]="selectedOptionDestino" value="Trabajo">
                         <label for="trabajo">Trabajo</label>
 
-                        <input type="radio" id="estudios" name="actividad" [(ngModel)]="selectedOption" value="Estudios">
+                        <input type="radio" id="estudios" name="actividad" [(ngModel)]="selectedOptionDestino" value="Estudios">
                         <label for="estudios">Estudios</label>
 
-                        <input type="radio" id="actividad-fisica" name="actividad" [(ngModel)]="selectedOption" value="Actividad Fisica">
+                        <input type="radio" id="actividad-fisica" name="actividad" [(ngModel)]="selectedOptionDestino" value="Actividad Fisica">
                         <label for="actividad-fisica">Actividad Física</label>
 
-                        <input type="radio" id="visita" name="actividad" [(ngModel)]="selectedOption" value="Visita Familiares/Amigos">
+                        <input type="radio" id="visita" name="actividad" [(ngModel)]="selectedOptionDestino" value="Visita Familiares/Amigos">
                         <label for="visita">Visita Familiares/Amigos</label>
 
                         <!-- <button type="submit">Enviar</button> -->
@@ -30,7 +30,7 @@
             <button (click)="goBackSeccionHome()" class="boton-home">
               <span class="material-icons">home</span>
             </button>
-            <button type="submit" class="boton-siguiente">
+            <button (click)="enviar()" class="boton-siguiente">
               <span class="material-icons">arrow_forward</span>
             </button>
         </div>
