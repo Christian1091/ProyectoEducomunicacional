@@ -1,26 +1,28 @@
-<div class="section-container">
-    <div class="image-column">
-        <img src="../../../assets/icons/money.png" alt="Scooter">
-        <img src="../../../assets/icons/electric.png" alt="Scooter">
-        <img src="../../../assets/icons/co2.png" alt="Scooter">
-        <img src="../../../assets/icons/arboles.png" alt="Scooter">
-    </div>
-    <div class="text-column">
-        <p class="label">Consumes: {{datos.seccionFour.precioGasolina}} dólares al año</p>
-        <p class="label">No se calula</p>
-        <p class="label">Emites: {{datos.seccionFour.emisionCo2}} kg Co2</p>
-        <p class="label">Recompensar con: {{datos.seccionFour.recomArbol}} árboles</p>
-    </div>
+<div class="plataforma-container">
+    <div class="section-container">
+        <div class="image-column">
+            <img src="../../../assets/icons/money.png" alt="Scooter">
+            <img src="../../../assets/icons/electric.png" alt="Scooter">
+            <img src="../../../assets/icons/co2.png" alt="Scooter">
+            <img src="../../../assets/icons/arboles.png" alt="Scooter">
+        </div>
+        <div class="text-column">
+            <p class="label">Consumes: {{datos.seccionFour.precioGasolina}} dólares al año</p>
+            <p class="label">No se calula</p>
+            <p class="label">Emites: {{datos.seccionFour.emisionCo2}} kg Co2</p>
+            <p class="label">Recompensar con: {{datos.seccionFour.recomArbol}} árboles</p>
+        </div>
 
-    <!-- Botones en la parte inferior -->
-    <div class="botones">
-        <button class="boton-home">
+        <!-- Botones en la parte inferior -->
+        <div class="botones">
+            <button class="boton-home" (click)="goBackSeccionThree()">
         <span class="material-icons">arrow_back</span>
       </button>
 
-        <button class="boton-siguiente">
+            <button class="boton-siguiente" (click)="goToNextSeccionHome()">
         <span class="material-icons">arrow_forward</span>
       </button>
-    </div>
+        </div>
 
+    </div>
 </div>

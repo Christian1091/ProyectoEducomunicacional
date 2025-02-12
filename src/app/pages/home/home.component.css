@@ -18,6 +18,37 @@
     /* Asegura que el padding no afecte el tamaño del contenedor */
 }
 
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #ffffffe8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: auto;
+    max-width: 500px;
+    padding: 20px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.card-body {
+    padding: 10px 0;
+}
+
 
 /* Título en mayúsculas y centrado */
 
@@ -43,6 +74,38 @@
     /* Ancho máximo para una buena presentación en pantallas grandes */
     text-align: justify;
     /* Justificar el texto para una mejor lectura */
+}
+
+
+/* Estilo para la imagen */
+
+.image-bottom-right {
+    position: fixed;
+    /* Fija la posición de la imagen */
+    bottom: 70px;
+    /* 10 píxeles desde la parte inferior */
+    right: 10px;
+    /* 10 píxeles desde el lado derecho */
+    width: 700px;
+    /* Tamaño de la imagen (ajústalo según tu necesidad) */
+    height: auto;
+    /* Mantén la proporción de la imagen */
+    z-index: 1000;
+    /* Asegúrate de que la imagen esté por encima de otros elementos */
+    /* Iniciar con opacidad 0 y desplazada desde abajo */
+    opacity: 0;
+    transform: translateY(30px);
+    /* Agregar transición para animar */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+/* Agregar animación de aparición */
+
+.image-bottom-right.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    /* La imagen se moverá hasta su posición original */
 }
 
 

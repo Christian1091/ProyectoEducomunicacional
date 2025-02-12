@@ -21,12 +21,12 @@ export class SecctionFourComponent {
   }
 
 
-  goToNextSeccionFour() {
-    this.router.navigateByUrl('/home/secctionFour');
+  goToNextSeccionHome() {
+    this.router.navigateByUrl('/home');
   }
 
-  goBackSeccionTwo() {
-    this.router.navigateByUrl('/home/secctionTwo');
+  goBackSeccionThree() {
+    this.router.navigateByUrl('/home/secctionThree');
   }
 
   // RECUPERA LOS VALORES DE LA SECCION TRES

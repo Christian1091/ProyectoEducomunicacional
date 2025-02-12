@@ -50,7 +50,7 @@ export class SecctionThreeComponent {
       console.log('Costo consumo anual: $ ' + this.costGasoAnual)
 
       //Calcular emision Co2
-      this.co2 = this.emiCo2 * this.distSemanal;
+      this.co2 = parseFloat((this.emiCo2 * this.distSemanal).toFixed(2));
 
       //Recompensar árboles
       this.numArb = Math.round(this.co2 / 0.27);
