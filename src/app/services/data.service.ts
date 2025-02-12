@@ -9,7 +9,7 @@ export class DataService {
     seccionOne: { destino:''},
     seccionTwo: { kilometro: 0},
     seccionThree: { transporte: ''},
-    seccionFour: { precioGasolina: 0, resultado2:'', resultado3:''},
+    seccionFour: { precioGasolina: 0, emisionCo2: 0, recomArbol: 0},
   }
 
   constructor() { }
@@ -27,11 +27,15 @@ export class DataService {
     this.datos.seccionThree = datos;
   }
 
-  saveDataFour(datos: {precioGasolina:number, resultado2:string, resultado3:string}) {
+  saveDataFour(datos: {precioGasolina:number, emisionCo2:number, recomArbol:number}) {
     this.datos.seccionFour = datos;
   }
 
   obtenerData() {
     return this.datos;
+  }
+
+  getKilometro(): number {
+    return this.datos.seccionTwo.kilometro;
   }
 }

@@ -11,12 +11,16 @@ export class SecctionThreeComponent {
 
   selectedOptionTrans: string = '';
 
-  litroAuto: number = 4;
-  precioLitro: number = 11.48;
+  distSemanal: number = 0;
+  litroConsumido: number = 0;
+  precioLitro: number = 0;
   tiempo: number = 48;
-  gaso: number= 0;
-  co2: string='128';
-  numArb: string='189';
+  costGasoAnual: number= 0;
+
+  emiCo2: number = 0.97;
+
+  co2: number = 0;
+  numArb: number = 0;
 
   constructor (private router: Router, private dataService: DataService){}
 
@@ -27,8 +31,31 @@ export class SecctionThreeComponent {
   enviar() {
     if(this.selectedOptionTrans !== null) {
       this.dataService.saveDataThree({transporte: this.selectedOptionTrans});
-      this.gaso = this.precioLitro * this.tiempo;
-      this.dataService.saveDataFour({precioGasolina: this.gaso, resultado2:this.co2, resultado3: this.numArb});
+
+      //Calcular distancia semanal
+      this.distSemanal = this.dataService.getKilometro() * 5;
+      console.log('Kilometros a la semana: ' + this.distSemanal)
+
+      //Calcular litros consumidos
+      this.litroConsumido = (8 * this.distSemanal)/100;
+      console.log('litros consumidos: ' + this.litroConsumido)
+
+      //Calcular precio litro
+      this.precioLitro = (this.litroConsumido * 2.71)/3.78;
+      const precioLitroDecimal = parseFloat(this.precioLitro.toFixed(2))
+      console.log('Precio litro: $ ' + precioLitroDecimal)
+
+      // Calcula costo gasolina anual
+      this.costGasoAnual = precioLitroDecimal * this.tiempo;
+      console.log('Costo consumo anual: $ ' + this.costGasoAnual)
+
+      //Calcular emision Co2
+      this.co2 = this.emiCo2 * this.distSemanal;
+
+      //Recompensar árboles
+      this.numArb = Math.round(this.co2 / 0.27);
+
+      this.dataService.saveDataFour({precioGasolina: this.costGasoAnual, emisionCo2: this.co2, recomArbol: this.numArb});
 
       this.router.navigateByUrl('/home/secctionFour');
     }
