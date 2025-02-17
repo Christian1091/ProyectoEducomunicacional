@@ -1,93 +1,197 @@
 /* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
+
 .plataforma-container {
-  height: 100vh;  /* Ocupa el 100% de la altura de la ventana */
-  background: linear-gradient(to right, #a8e6cf, #dcedc1); /* Fondo ecológico mezclado con blanco */
-  display: flex;  /* Flexbox para organizar el contenido */
-  flex-direction: column;  /* Los elementos se organizan de arriba hacia abajo */
-  text-align: left;  /* Alinea el texto a la izquierda */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño del contenedor */
+    height: 100vh;
+    /* Ocupa el 100% de la altura de la ventana */
+    background: linear-gradient(to right, #a8e6cf, #dcedc1);
+    /* Fondo ecológico mezclado con blanco */
+    display: flex;
+    /* Flexbox para organizar el contenido */
+    flex-direction: column;
+    /* Los elementos se organizan de arriba hacia abajo */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño del contenedor */
 }
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #ffffffe8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: auto;
+    max-width: 500px;
+    padding: 20px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.card-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.card-body {
+    padding: 10px 0;
+}
+
 
 /* Título en mayúsculas y centrado */
+
 .titulo {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  color: #388e3c;  /* Color verde para el título */
-  text-align: center;  /* El título está centrado */
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #388e3c;
+    /* Color verde para el título */
+    text-align: center;
+    /* El título está centrado */
 }
+
 
 /* Estilo para el resumen */
+
 .resumen {
-  font-size: 1.2rem;
-  color: #333;
-  line-height: 1.6;
-  max-width: 800px;  /* Ancho máximo para una buena presentación en pantallas grandes */
-  text-align: justify;  /* Justificar el texto para una mejor lectura */
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    max-width: 800px;
+    /* Ancho máximo para una buena presentación en pantallas grandes */
+    text-align: justify;
+    /* Justificar el texto para una mejor lectura */
 }
+
+
+/* Estilo para la imagen */
+
+.image-bottom-right {
+    position: fixed;
+    /* Fija la posición de la imagen */
+    bottom: 70px;
+    /* 10 píxeles desde la parte inferior */
+    right: 10px;
+    /* 10 píxeles desde el lado derecho */
+    width: 700px;
+    /* Tamaño de la imagen (ajústalo según tu necesidad) */
+    height: auto;
+    /* Mantén la proporción de la imagen */
+    z-index: 1000;
+    /* Asegúrate de que la imagen esté por encima de otros elementos */
+    /* Iniciar con opacidad 0 y desplazada desde abajo */
+    opacity: 0;
+    transform: translateY(30px);
+    /* Agregar transición para animar */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+/* Agregar animación de aparición */
+
+.image-bottom-right.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    /* La imagen se moverá hasta su posición original */
+}
+
 
 /* Estilo para el botón ecológico */
+
 .boton-ecologico {
-  position: fixed;  /* Posiciona el botón de forma fija */
-  bottom: 30px;  /* 30px de distancia desde el borde inferior */
-  left: 50%;  /* Centrado horizontalmente */
-  transform: translateX(-50%);  /* Ajusta el posicionamiento para centrarlo exactamente */
-  background-color: #388e3c;  /* Fondo verde ecológico */
-  color: white;  /* Color de texto blanco */
-  padding: 12px 30px;  /* Tamaño del botón */
-  border-radius: 25px;  /* Bordes redondeados */
-  font-size: 1.1rem;  /* Tamaño de la fuente */
-  font-weight: bold;
-  border: none;  /* Sin borde */
-  cursor: pointer;  /* Cambia el cursor al pasar sobre el botón */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Sombra para darle profundidad */
-  transition: background-color 0.3s ease, transform 0.3s ease;  /* Transiciones suaves */
+    position: fixed;
+    /* Posiciona el botón de forma fija */
+    bottom: 30px;
+    /* 30px de distancia desde el borde inferior */
+    left: 50%;
+    /* Centrado horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta el posicionamiento para centrarlo exactamente */
+    background-color: #388e3c;
+    /* Fondo verde ecológico */
+    color: white;
+    /* Color de texto blanco */
+    padding: 12px 30px;
+    /* Tamaño del botón */
+    border-radius: 25px;
+    /* Bordes redondeados */
+    font-size: 1.1rem;
+    /* Tamaño de la fuente */
+    font-weight: bold;
+    border: none;
+    /* Sin borde */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre el botón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para darle profundidad */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Transiciones suaves */
 }
+
 
 /* Efecto de hover en el botón */
+
 .boton-ecologico:hover {
-  background-color: #2e7d32;  /* Color de fondo más oscuro al pasar el ratón */
-  transform: translateX(-50%) scale(1.05);  /* Agranda ligeramente el botón */
+    background-color: #2e7d32;
+    /* Color de fondo más oscuro al pasar el ratón */
+    transform: translateX(-50%) scale(1.05);
+    /* Agranda ligeramente el botón */
 }
+
 
 /* Responsividad para pantallas medianas (por ejemplo, tabletas) */
+
 @media (max-width: 768px) {
-  .plataforma-container {
-    padding: 15px;  /* Reducir el padding en pantallas más pequeñas */
-  }
-
-  .titulo {
-    font-size: 2rem;  /* Reducir el tamaño del título */
-  }
-
-  .resumen {
-    font-size: 1rem;  /* Reducir el tamaño del texto */
-    max-width: 90%;  /* Aumentar el ancho del contenido para pantallas más pequeñas */
-  }
+    .plataforma-container {
+        padding: 15px;
+        /* Reducir el padding en pantallas más pequeñas */
+    }
+    .titulo {
+        font-size: 2rem;
+        /* Reducir el tamaño del título */
+    }
+    .resumen {
+        font-size: 1rem;
+        /* Reducir el tamaño del texto */
+        max-width: 90%;
+        /* Aumentar el ancho del contenido para pantallas más pequeñas */
+    }
 }
+
 
 /* Responsividad para pantallas pequeñas (teléfonos móviles) */
+
 @media (max-width: 480px) {
-  .titulo {
-    font-size: 1.5rem;  /* Reducir el tamaño del título aún más */
-  }
-
-  .resumen {
-    font-size: 0.9rem;  /* Reducir el tamaño del texto */
-  }
-
-  .plataforma-container {
-    padding: 10px;  /* Reducir el padding en pantallas muy pequeñas */
-  }
-
-   /* Ajustar el tamaño del botón para pantallas muy pequeñas */
-   .boton-ecologico {
-    padding: 8px 20px;  /* Reducir aún más el tamaño del botón */
-    font-size: 0.9rem;  /* Reducir el tamaño de la fuente */
-  }
+    .titulo {
+        font-size: 1.5rem;
+        /* Reducir el tamaño del título aún más */
+    }
+    .resumen {
+        font-size: 0.9rem;
+        /* Reducir el tamaño del texto */
+    }
+    .plataforma-container {
+        padding: 10px;
+        /* Reducir el padding en pantallas muy pequeñas */
+    }
+    /* Ajustar el tamaño del botón para pantallas muy pequeñas */
+    .boton-ecologico {
+        padding: 8px 20px;
+        /* Reducir aún más el tamaño del botón */
+        font-size: 0.9rem;
+        /* Reducir el tamaño de la fuente */
+    }
 }
-

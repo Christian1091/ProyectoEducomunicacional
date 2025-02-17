@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-secction-one',
@@ -8,11 +9,18 @@ import { Router } from '@angular/router';
 })
 export class SecctionOneComponent {
 
-  selectedOption: string = '';  // Almacena el valor seleccionado
+  selectedOptionDestino: string = '';  // Almacena el valor seleccionado
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
 
-  onSubmit() {
+  enviar() {
+    if(this.selectedOptionDestino !==null ) {
+      this.dataService.saveDataOne({destino: this.selectedOptionDestino});
+      this.router.navigateByUrl('/home/secctionTwo');
+    }
+  }
+
+  /*onSubmit() {
     // Aquí obtenemos el valor seleccionado del radio button
     // Ya que estamos usando ngModel, lo podemos acceder directamente
     console.log("Ha seleccionado la opcion ==> " + this.selectedOption);
@@ -22,7 +30,7 @@ export class SecctionOneComponent {
     this.router.navigate(['/home/secctionTwo'], {
       state: { selectedOption: this.selectedOption },
     });
-  }
+  }*/
 
   goToNextSeccionTwo() {
     this.router.navigateByUrl('/home/secctionTwo');

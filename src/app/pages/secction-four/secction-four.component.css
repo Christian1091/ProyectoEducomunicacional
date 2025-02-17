@@ -1,113 +1,183 @@
-/* Fondo ecológico */
-body {
-  background-image: url('https://www.publicdomainpictures.net/pictures/30000/velka/green-grass-field-1345023234bHL.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-}
+/* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
 
-/* Contenedor principal del formulario */
-.form-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+.plataforma-container {
+  /* height: 100vh; */
+  /* Ocupa el 100% de la altura de la ventana */
+  background: linear-gradient(to right, #a8e6cf, #ffffff);
+  /* Fondo ecológico mezclado con blanco */
+  display: flex;
+  /* Flexbox para organizar el contenido */
+  flex-direction: column;
+  /* Los elementos se organizan de arriba hacia abajo */
+  /*justify-content: center;  /* Centra el contenido verticalmente */
+  /*align-items: center;  /* Centra el contenido horizontalmente */
+  /*text-align: left;  /* Alinea el texto a la izquierda */
+  /*padding: 20px;*/
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  /* Asegura que el padding no afecte el tamaño del contenedor */
+  position: relative;
+  /* Necesario para el posicionamiento de los botones */
 }
 
-/* Contenedor de la pregunta */
-.question-container {
-  text-align: center;
-  margin-bottom: 20px;
+
+/* Contenedor principal, se centra y organiza las columnas */
+
+.section-container {
+  display: flex;
+  justify-content: center;
+  /* Centra las columnas horizontalmente */
+  align-items: flex-start;
+  /* Alinea las columnas en la parte superior */
+  gap: 20px;
+  /* Espacio entre las columnas */
+  padding: 20px;
+  height: 100vh;
+  /* La altura ocupa toda la pantalla */
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  /* Permite que las columnas se acomoden en pantallas pequeñas */
+  margin-top: 100px;
 }
 
-/* Estilos de la pregunta */
-.question {
-  margin-bottom: 20px;
+
+/* Estilo para la columna de imágenes */
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+  /* Las imágenes se apilan verticalmente */
+  gap: 10px;
+  /* Espacio entre las imágenes */
+  flex: 1 1 250px;
+  /* La columna de imágenes ocupa un mínimo de 250px */
+  max-width: 120px;
+  /* Limita el ancho máximo de la columna */
 }
 
-h2 {
-  font-size: 24px;
-  color: #2c3e50;
+.image-column img {
+  width: 100%;
+  /* Las imágenes ocupan el 100% del ancho de su contenedor */
+  height: auto;
+  /* Mantiene la proporción de la imagen */
+  border-radius: 8px;
+  /* Bordes redondeados para las imágenes */
+  object-fit: cover;
+  /* Asegura que las imágenes no se deformen */
 }
 
-/* Opciones de la pregunta */
-input[type="radio"] {
-  margin-right: 10px;
+
+/* Estilo para la columna de etiquetas */
+
+.text-column {
+  display: flex;
+  flex-direction: column;
+  /* Las etiquetas se apilan verticalmente */
+  gap: 80px;
+  /* Espacio entre las etiquetas */
+  flex: 1 1 250px;
+  /* La columna de etiquetas ocupa un mínimo de 250px */
+  max-width: 280px;
+  /* Limita el ancho máximo de la columna */
+  padding-top: 25px;
 }
 
-label {
+.label {
   font-size: 18px;
-  margin-right: 15px;
-  color: #2c3e50;
 }
 
-/* Botones de navegación */
-.navigation-buttons {
+
+/* Estilo para los botones */
+
+.botones {
+  position: fixed;
+  bottom: 30px;
+  /* Los botones estarán a 30px desde el borde inferior */
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  /* Distribuye los botones a la izquierda y derecha */
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Estilos de los botones */
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: #27ae60;
+.boton-siguiente,
+.boton-home {
+  background-color: #388e3c;
+  /* Fondo verde ecológico */
   color: white;
-  transition: background-color 0.3s ease;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:disabled {
-  background-color: lightgray;
-  cursor: not-allowed;
+.boton-siguiente:hover,
+.boton-home:hover {
+  background-color: #2e7d32;
+  /* Color más oscuro cuando pasa el ratón */
+  transform: scale(1.05);
 }
 
-button:hover {
-  background-color: #2ecc71;
+.btnComparar {
+  background-color: #11a3dd;  /* Azul ecológico (puedes ajustar el color como prefieras) */
+  color: white;               /* Texto blanco */
+  border: none;               /* Sin borde */
+  border-radius: 5px;         /* Bordes redondeados */
+  padding: 12px 20px;         /* Espaciado interior */
+  font-size: 16px;            /* Tamaño de fuente */
+  cursor: pointer;           /* Cambiar el cursor al pasar el ratón */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efectos de transición */
 }
 
-/* Estilos para el botón de ver resultados */
-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #3498db;
+.btnComparar:hover {
+  background-color: #7dd2ee;  /* Efecto al pasar el ratón (color más oscuro) */
+  transform: scale(1.05);      /* Efecto de agrandamiento */
 }
 
-button:hover {
-  background-color: #2980b9;
+/* Estilo del select */
+.select {
+  background-color: #f0f8ff;  /* Fondo color azul claro */
+  border: 2px solid #4CAF50;  /* Borde verde (puedes cambiarlo según el estilo que quieras) */
+  border-radius: 8px;         /* Bordes redondeados */
+  padding: 10px;              /* Espaciado interior */
+  font-size: 16px;            /* Tamaño de la fuente */
+  color: #333;                /* Color de texto */
+  width: 15%;                /* Ancho completo */
+  appearance: none;           /* Elimina el estilo predeterminado del navegador (si lo quieres más personalizado) */
+  -webkit-appearance: none;   /* Elimina el estilo predeterminado en Safari */
+  -moz-appearance: none;      /* Elimina el estilo predeterminado en Firefox */
+  cursor: pointer;           /* Cursor de mano cuando pasa sobre el select */
+  transition: border-color 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
 }
 
-/* Estilos para los resultados */
-.result-container {
-  text-align: center;
-  font-size: 18px;
-  color: #2c3e50;
-  margin-top: 20px;
+/* Estilo cuando el select está enfocado (cuando el usuario hace clic en él) */
+.select:focus {
+  border-color: #45a049;  /* Borde verde más oscuro */
+  background-color: #e0f7e0; /* Fondo más claro */
+  outline: none;           /* Eliminar el borde azul predeterminado */
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .form-container {
-    padding: 15px;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 8px 16px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  label {
-    font-size: 16px;
-  }
+/* Estilo para la flecha del select (cuando aparece en algunos navegadores) */
+.select::-ms-expand {
+  display: none;  /* Elimina la flecha en Internet Explorer */
 }
+
+/* Estilo cuando el select tiene opciones */
+.select option {
+  background-color: #f0f8ff;  /* Fondo para las opciones */
+  color: #333;                /* Color de texto para las opciones */
+  padding: 8px;               /* Espaciado entre las opciones */
+}
+
+/* Estilo cuando el select se pasa por encima */
+.select:hover {
+  border-color: #6f9c4c;  /* Borde un poco más oscuro al pasar el mouse */
+  background-color: #e7f7e7;  /* Fondo ligeramente más claro */
+}
+

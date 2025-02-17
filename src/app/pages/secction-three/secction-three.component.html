@@ -3,62 +3,7 @@
     <h2 class="titulo">¿Qué tipo de transporte prefieres para tus desplazamientos diarios?</h2>
 
     <div class="container">
-      <h3>ELECTRICOS</h3>
-      <!--Electricos-->
-      <div class="row">
 
-        <div class="radio-tile-group">
-
-          <div class="input-container">
-            <input id="walk" type="radio" name="radio">
-            <div class="radio-tile">
-              <img src="../../../assets/icons/scooter.png" alt="Scooter">
-              <label for="walk">Walk</label>
-            </div>
-          </div>
-
-          <div class="input-container">
-            <input id="walk" type="radio" name="radio">
-            <div class="radio-tile">
-              <img src="../../../assets/icons/bicicletaElec.png" alt="Scooter">
-              <label for="walk">Walk</label>
-            </div>
-          </div>
-
-          <div class="input-container">
-            <input id="walk" type="radio" name="radio">
-            <div class="radio-tile">
-              <img src="../../../assets/icons/motoElec.png" alt="Scooter">
-              <label for="walk">Walk</label>
-            </div>
-          </div>
-
-          <div class="input-container">
-            <input id="walk" type="radio" name="radio">
-            <div class="radio-tile">
-              <img src="../../../assets/icons/autoElec.png" alt="Scooter">
-              <label for="walk">Walk</label>
-            </div>
-          </div>
-
-          <div class="input-container">
-            <input id="walk" type="radio" name="radio">
-            <div class="radio-tile">
-              <img src="../../../assets/icons/tranvia.png" alt="Scooter">
-              <label for="walk">Walk</label>
-            </div>
-          </div>
-
-          <div class="input-container">
-            <input id="walk" type="radio" name="radio">
-            <div class="radio-tile">
-              <img src="../../../assets/icons/hombre.png" alt="Scooter">
-              <label for="walk">Walk</label>
-            </div>
-          </div>
-
-        </div>
-      </div>
       <!--Combustion-->
       <h3>COMBUSTION</h3>
       <div class="row">
@@ -66,55 +11,114 @@
         <div class="radio-tile-group">
 
           <div class="input-container">
-            <input id="walk" type="radio" name="radio">
+            <input id="walk" type="radio" name="radio" value="A Pie" [(ngModel)]="selectedOptionTrans">
+            <div class="radio-tile">
+              <img src="../../../assets/icons/hombre.png" alt="Scooter">
+              <label class="texto" for="walk">A Pie</label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input id="walk" type="radio" name="radio" value="Camioneta" [(ngModel)]="selectedOptionTrans">
+            <div class="radio-tile">
+              <img src="../../../assets/icons/camioneta.png" alt="Scooter">
+              <label class="texto" for="walk">Camioneta</label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input id="walk" type="radio" name="radio" value="Bicicleta" [(ngModel)]="selectedOptionTrans">
             <div class="radio-tile">
               <img src="../../../assets/icons/bicicleta.png" alt="Bicicleta">
-              <label for="walk">Walk</label>
+              <label class="texto" for="walk">Bicicleta</label>
             </div>
           </div>
 
           <div class="input-container">
-            <input id="walk" type="radio" name="radio">
+            <input id="walk" type="radio" name="radio" value="Moto" [(ngModel)]="selectedOptionTrans">
             <div class="radio-tile">
               <img src="../../../assets/icons/moto.png" alt="Moto">
-              <label for="walk">Walk</label>
+              <label class="texto" for="walk">Moto</label>
             </div>
           </div>
 
           <div class="input-container">
-            <input id="walk" type="radio" name="radio">
+            <input id="walk" type="radio" name="radio" value="Auto" [(ngModel)]="selectedOptionTrans">
             <div class="radio-tile">
               <img src="../../../assets/icons/carro.png" alt="Auto">
-              <label for="walk">Walk</label>
+              <label class="texto" for="walk">Auto</label>
             </div>
           </div>
 
           <div class="input-container">
-            <input id="walk" type="radio" name="radio">
+            <input id="walk" type="radio" name="radio" value="Bus" [(ngModel)]="selectedOptionTrans">
             <div class="radio-tile">
               <img src="../../../assets/icons/autobus.png" alt="Bus">
-              <label for="walk">Walk</label>
+              <label class="texto" for="walk">Bus</label>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <h3>ELECTRICOS</h3>
+      <!--Electricos-->
+      <div class="row">
+
+        <div class="radio-tile-group">
+
+          <div class="input-container">
+            <input id="walk" type="radio" name="radio" value="A Pie" [(ngModel)]="selectedOptionTrans">
+            <div class="radio-tile">
+              <img src="../../../assets/icons/hombre.png" alt="Scooter">
+              <label class="texto" for="walk">A Pie</label>
             </div>
           </div>
 
           <div class="input-container">
-            <input id="walk" type="radio" name="radio">
+            <input id="walk" type="radio" name="radio" value="ScooterElectrico" [(ngModel)]="selectedOptionTrans">
             <div class="radio-tile">
-              <img src="../../../assets/icons/hombre.png" alt="Scooter">
-              <label for="walk">Walk</label>
+              <img src="../../../assets/icons/scooter.png" alt="Scooter">
+              <label class="texto" for="walk">Scooter Eléctrico</label>
             </div>
           </div>
 
           <div class="input-container">
-            <input id="walk" type="radio" name="radio">
+            <input id="walk" type="radio" name="radio" value="Bicicleta Eléctrica" [(ngModel)]="selectedOptionTrans">
             <div class="radio-tile">
-              <img src="../../../assets/icons/hombre.png" alt="Scooter">
-              <label for="walk">Walk</label>
+              <img src="../../../assets/icons/bicicletaElec.png" alt="Scooter">
+              <label class="texto" for="walk">Bicilieta Eléctrica</label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input id="walk" type="radio" name="radio" value="Moto Eléctrica" [(ngModel)]="selectedOptionTrans">
+            <div class="radio-tile">
+              <img src="../../../assets/icons/motoElec.png" alt="Scooter">
+              <label class="texto" for="walk">Moto Eléctrica</label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input id="walk" type="radio" name="radio" value="Auto Eléctrico" [(ngModel)]="selectedOptionTrans">
+            <div class="radio-tile">
+              <img src="../../../assets/icons/autoElec.png" alt="Scooter">
+              <label class="texto" for="walk">Auto Eléctrico</label>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <input id="walk" type="radio" name="radio" value="Tranvía" [(ngModel)]="selectedOptionTrans">
+            <div class="radio-tile">
+              <img src="../../../assets/icons/tranvia.png" alt="Scooter">
+              <label class="texto" for="walk">Tranvía</label>
             </div>
           </div>
 
         </div>
       </div>
+
     </div>
 
     <!-- Botones en la parte inferior -->
@@ -122,10 +126,9 @@
       <button (click)="goBackSeccionTwo()" class="boton-home">
         <span class="material-icons">arrow_back</span>
       </button>
-      <button (click)="goToNextSeccionFour()" class="boton-siguiente">
+      <button (click)="enviar()" class="boton-siguiente">
         <span class="material-icons">arrow_forward</span>
       </button>
     </div>
-
   </div>
 </form>

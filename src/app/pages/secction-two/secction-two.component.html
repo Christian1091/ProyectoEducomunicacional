@@ -1,54 +1,59 @@
-<form>
-    <div class="plataforma-container">
-        <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
+<form  [formGroup]="this.formulario">
+  <div class="plataforma-container">
+      <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
 
-        <!-- preguntas.component.html -->
-        <div class="card-container">
-            <div class="card">
-                <div class="card-body">
-                    <div class="radio-group">
-                        <input type="radio" id="cero" name="option" value="0.5" [(ngModel)]="value">
-                        <label for="cero">0 < 1 km</label>
-
-                        <input type="radio" id="uno" name="option" value="1.5" [(ngModel)]="value">
-                        <label for="uno">1 < 2 km</label>
-
-                        <input type="radio" id="dos" name="option" value="3" [(ngModel)]="value">
-                        <label for="dos">2 < 4 km</label>
-
-                        <input type="radio" id="cuatro" name="option" value="5" [(ngModel)]="value">
-                        <label for="cuatro">4 < 6 km</label>
-
-                        <input type="radio" id="seis" name="option" value="7" [(ngModel)]="value">
-                        <label for="seis">6 < 8 km</label>
-
-                        <input type="radio" id="ocho" name="option" value="9" [(ngModel)]="value">
-                        <label for="ocho">8 < 10 km</label>
-
-                        <input type="radio" id="otros" name="option" value="yes" [(ngModel)]="value" />
-                        <label for="otros">Otro</label>
-
+      <div class="card-container">
+          <div class="card">
+              <div class="card-body">
+                  <div class="radio-group">
+                    <div *ngFor="let km of kilometros">
+                      <input
+                      type="radio"
+                      [id]="km.id"
+                      [value]="km.value"
+                      formControlName="seleccionKM"
+                      (change)="onTouched()"
+                       />
+                      <label [for]="km.id">{{ km.label }}</label>
                     </div>
+                  </div>
 
-                    <!-- Input habilitado/deshabilitado según la selección del radio button -->
-                    <div *ngIf="enableInput === 'yes'">
-                        <input id="userInput" type="text" [(ngModel)]="value" name="otroValor" placeholder="Ingresa km" />
-                    </div>
-                    <p> Resultado: {{ resultado }} km</p>
+                  <div *ngIf="this.formulario.get('seleccionKM')?.value !== undefined && this.formulario.get('seleccionKM')?.value === 0">
+                    <input class="form-control" id="userInput" type="number" formControlName="otroValor" name="otroValor" placeholder="Ingrese los km" />
+                  </div>
+              </div>
+          </div>
+      </div>
 
-                </div>
-            </div>
+      <div *ngIf="formulario.get('seleccionKM')?.touched"
+      style="width: 100%; text-align: center; margin-top: 20px;">
+
+      <h3>Kilómetros de ida y vuelta</h3>
+        <div *ngIf="this.formulario.get('seleccionKM')?.value > 0; else radios">
+          {{this.formulario.get('seleccionKM')?.value * 2}} km
         </div>
 
-        <!-- Botones en la parte inferior -->
-        <div class="botones">
-            <button (click)="goBackSeccionOne()" class="boton-home">
-        <span class="material-icons">arrow_back</span>
-      </button>
-            <button (click)="calcularValor()" class="boton-siguiente">
-        <span class="material-icons">arrow_forward</span>
-      </button>
-        </div>
+        <ng-template  #radios>
+          {{this.formulario.get('otroValor')?.value * 2}} km
+        </ng-template>
+      </div>
 
-    </div>
+      <div
+        style="color: red; width: 100%; margin-top: 30px;">
+        <div style="text-align: center;">
+          {{this.MensajeNotificacion}}
+        </div>
+      </div>
+
+      <div class="botones">
+          <button [routerLink]="['/home/secctionOne']" class="boton-home">
+          <span class="material-icons">arrow_back</span>
+        </button>
+
+          <button (click)="enviar()" class="boton-siguiente">
+          <span class="material-icons">arrow_forward</span>
+        </button>
+      </div>
+
+  </div>
 </form>

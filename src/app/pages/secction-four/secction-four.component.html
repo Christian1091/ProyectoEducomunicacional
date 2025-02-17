@@ -1,47 +1,75 @@
-<div class="form-container">
-  <!-- Formulario de preguntas -->
-  <form *ngIf="!isFinished" (ngSubmit)="onSubmit()">
-    <div class="question-container">
-      <div class="question">
-        <h2>{{ questions[currentIndex].question }}</h2>
-
-        <!-- Mostrar las opciones de respuesta -->
-        <div *ngFor="let option of questions[currentIndex].options">
-          <input
-            type="radio"
-            [name]="questions[currentIndex].question"
-            [value]="option"
-            (change)="onAnswerChange(option)"
-          />
-          <label>{{ option }}</label>
+<form [formGroup]="formulario">
+  <div class="plataforma-container">
+    <div class="section-container">
+        <div class="image-column">
+            <img src="../../../assets/icons/money.png" alt="Scooter">
+            <img src="../../../assets/icons/electric.png" alt="Scooter">
+            <img src="../../../assets/icons/co2.png" alt="Scooter">
+            <img src="../../../assets/icons/arboles.png" alt="Scooter">
         </div>
+        <div class="text-column">
+            <p class="label">Consumes: {{datos.seccionFour.precioGasolina}} dólares al año</p>
+            <p class="label">No se calula</p>
+            <p class="label">Emites: {{datos.seccionFour.emisionCo2}} kg Co2</p>
+            <p class="label">Recompensar con: {{datos.seccionFour.recomArbol}} árboles</p>
+        </div>
+    </div>
+
+    <div style="width: 100%; text-align: center;" >
+      <div style="margin-bottom: 10px;">
+        <button type="button" class="btnComparar" (click)="comparar()">COMPARAR</button>
       </div>
 
-      <!-- Botones de navegación -->
-      <div class="navigation-buttons">
-        <!-- Botón de regresar -->
-        <button type="button" (click)="goBack()" [disabled]="currentIndex === 0">
-          Regresar
-        </button>
+      <section *ngIf="this.compararValores">
+        <div >
+          <select id="dropPrincipal" formControlName="dropPrincipal" class="select">
+            <option value="">Seleccione una opción</option>
+            <option *ngFor="let opcion of opciones" [value]="opcion.id">
+              {{ opcion.label }}
+            </option>
+          </select>
+        </div>
 
-        <!-- Botón de continuar -->
-        <button type="button" (click)="goForward()" [disabled]="currentIndex === questions.length - 1">
-          Continuar
-        </button>
-      </div>
+        <div style="margin-top: 1em;">
+          <select id="dropSecundario" class="select" formControlName="dropSecundario" (change)="valorSeleccionado()">
+            <option value="">Seleccione un medio</option>
+            <option *ngFor="let opcion of opcionesFiltrados" [value]="opcion.label">
+              {{ opcion.label }}
+            </option>
+
+          </select>
+        </div>
+
+
+        <div *ngIf="this.formulario.get('dropSecundario')?.value"
+          style="width: 100%; margin-top: 30px;">
+          <div style="text-align: center;">
+            Opción Seleccionada: {{this.formulario.get('dropSecundario')?.value}}
+          </div>
+        </div>
+
+        <div
+          style="color: red; width: 100%; margin-top: 30px;">
+          <div style="text-align: center;">
+            {{this.MensajeNotificacion}}
+          </div>
+        </div>
+      </section>
     </div>
-  </form>
 
-  <!-- Botón para ver resultados -->
-  <div *ngIf="currentIndex === questions.length - 1">
-    <button (click)="viewResults()">Ver Resultados</button>
+    <!-- Botones en la parte inferior -->
+    <div class="botones">
+      <button class="boton-home" (click)="goBackSeccionThree()">
+      <span class="material-icons">arrow_back</span>
+      </button>
+
+      <button class="boton-siguiente" (click)="goToNextSeccionHome()">
+      <span class="material-icons">arrow_forward</span>
+      </button>
+    </div>
   </div>
 
-  <!-- Mostrar resultados -->
-  <div *ngIf="isFinished" class="result-container">
-    <h2>Resultados:</h2>
-    <div *ngFor="let question of questions">
-      <p><strong>{{ question.question }}:</strong> {{ question.answer }}</p>
-    </div>
+  <div style="height: 200px;">
+
   </div>
-</div>
+</form>
