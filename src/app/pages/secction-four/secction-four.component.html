@@ -1,14 +1,47 @@
-<div class="section-container">
-    <div class="image-column">
-        <img src="../../../assets/icons/scooter.png" alt="Scooter">
-        <img src="../../../assets/icons/scooter.png" alt="Scooter">
-        <img src="../../../assets/icons/scooter.png" alt="Scooter">
-        <img src="../../../assets/icons/scooter.png" alt="Scooter">
+<div class="form-container">
+  <!-- Formulario de preguntas -->
+  <form *ngIf="!isFinished" (ngSubmit)="onSubmit()">
+    <div class="question-container">
+      <div class="question">
+        <h2>{{ questions[currentIndex].question }}</h2>
+
+        <!-- Mostrar las opciones de respuesta -->
+        <div *ngFor="let option of questions[currentIndex].options">
+          <input
+            type="radio"
+            [name]="questions[currentIndex].question"
+            [value]="option"
+            (change)="onAnswerChange(option)"
+          />
+          <label>{{ option }}</label>
+        </div>
+      </div>
+
+      <!-- Botones de navegación -->
+      <div class="navigation-buttons">
+        <!-- Botón de regresar -->
+        <button type="button" (click)="goBack()" [disabled]="currentIndex === 0">
+          Regresar
+        </button>
+
+        <!-- Botón de continuar -->
+        <button type="button" (click)="goForward()" [disabled]="currentIndex === questions.length - 1">
+          Continuar
+        </button>
+      </div>
     </div>
-    <div class="text-column">
-        <p class="label">Etiqueta 1: Valor 1</p>
-        <p class="label">Etiqueta 2: Valor 2</p>
-        <p class="label">Etiqueta 3: Valor 3</p>
-        <p class="label">Etiqueta 4: Valor 4</p>
+  </form>
+
+  <!-- Botón para ver resultados -->
+  <div *ngIf="currentIndex === questions.length - 1">
+    <button (click)="viewResults()">Ver Resultados</button>
+  </div>
+
+  <!-- Mostrar resultados -->
+  <div *ngIf="isFinished" class="result-container">
+    <h2>Resultados:</h2>
+    <div *ngFor="let question of questions">
+      <p><strong>{{ question.question }}:</strong> {{ question.answer }}</p>
     </div>
+  </div>
 </div>

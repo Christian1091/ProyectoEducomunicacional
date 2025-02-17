@@ -7,32 +7,32 @@
             <div class="card">
                 <div class="card-body">
                     <div class="radio-group">
-                        <input type="radio" id="cero" name="option" value="no" [(ngModel)]="enableInput" />
+                        <input type="radio" id="cero" name="option" value="0.5" [(ngModel)]="value">
                         <label for="cero">0 < 1 km</label>
 
-                        <input type="radio" id="uno" name="option" value="no" />
+                        <input type="radio" id="uno" name="option" value="1.5" [(ngModel)]="value">
                         <label for="uno">1 < 2 km</label>
 
-                        <input type="radio" id="dos" name="option" value="no" />
+                        <input type="radio" id="dos" name="option" value="3" [(ngModel)]="value">
                         <label for="dos">2 < 4 km</label>
 
-                        <input type="radio" id="cuatro" name="option" value="no" />
+                        <input type="radio" id="cuatro" name="option" value="5" [(ngModel)]="value">
                         <label for="cuatro">4 < 6 km</label>
 
-                        <input type="radio" id="seis" name="option" value="no" />
+                        <input type="radio" id="seis" name="option" value="7" [(ngModel)]="value">
                         <label for="seis">6 < 8 km</label>
 
-                        <input type="radio" id="ocho" name="option" value="no" />
+                        <input type="radio" id="ocho" name="option" value="9" [(ngModel)]="value">
                         <label for="ocho">8 < 10 km</label>
 
-                        <input type="radio" id="otros" name="option" value="yes" [(ngModel)]="enableInput" />
+                        <input type="radio" id="otros" name="option" value="yes" [(ngModel)]="value" />
                         <label for="otros">Otro</label>
 
                     </div>
 
                     <!-- Input habilitado/deshabilitado según la selección del radio button -->
                     <div *ngIf="enableInput === 'yes'">
-                        <input id="userInput" type="text" [(ngModel)]="valorOtro" name="otroValor" placeholder="Ingresa km" />
+                        <input id="userInput" type="text" [(ngModel)]="value" name="otroValor" placeholder="Ingresa km" />
                     </div>
                     <p> Resultado: {{ resultado }} km</p>
 
@@ -45,7 +45,7 @@
             <button (click)="goBackSeccionOne()" class="boton-home">
         <span class="material-icons">arrow_back</span>
       </button>
-            <button (click)="goToNextSeccionThree()" class="boton-siguiente">
+            <button (click)="calcularValor()" class="boton-siguiente">
         <span class="material-icons">arrow_forward</span>
       </button>
         </div>
