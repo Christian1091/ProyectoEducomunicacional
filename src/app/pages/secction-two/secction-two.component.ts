@@ -11,12 +11,12 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 export class SecctionTwoComponent {
 
   kilometros = [
-    { id: '01', name: 'kilometros', value: 1, label: '0 < 1 km' },
-    { id: '02', name: 'kilometros', value: 2, label: '1 > 2 km' },
-    { id: '03', name: 'kilometros', value: 4, label: '2 > 4 km' },
-    { id: '04', name: 'kilometros', value: 6, label: '4 > 6 km' },
-    { id: '05', name: 'kilometros', value: 8, label: '6 > 8 km' },
-    { id: '06', name: 'kilometros', value: 10, label: '8 > 10 km' },
+    { id: '01', name: 'kilometros', value: 1, label: '0 a 1 km' },
+    { id: '02', name: 'kilometros', value: 2, label: '1 a 2 km' },
+    { id: '03', name: 'kilometros', value: 4, label: '2 a 4 km' },
+    { id: '04', name: 'kilometros', value: 6, label: '4 a 6 km' },
+    { id: '05', name: 'kilometros', value: 8, label: '6 a 8 km' },
+    { id: '06', name: 'kilometros', value: 10, label: '8 a 10 km' },
     { id: '07', name: 'kilometros', value: 0, label: 'Otro' }
   ];
 

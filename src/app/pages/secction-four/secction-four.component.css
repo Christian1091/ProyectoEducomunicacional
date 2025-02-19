@@ -1,51 +1,241 @@
-.contenedor {
+/* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
+
+.plataforma-container {
+    /* height: 100vh; */
+    /* Ocupa el 100% de la altura de la ventana */
+    background: linear-gradient(to right, #a8e6cf, #ffffff);
+    /* Fondo ecológico mezclado con blanco */
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 20px;
+    /* Flexbox para organizar el contenido */
+    flex-direction: column;
+    /* Los elementos se organizan de arriba hacia abajo */
+    /*justify-content: center;  /* Centra el contenido verticalmente */
+    /*align-items: center;  /* Centra el contenido horizontalmente */
+    /*text-align: left;  /* Alinea el texto a la izquierda */
+    /*padding: 20px;*/
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño del contenedor */
+    position: relative;
+    /* Necesario para el posicionamiento de los botones */
 }
 
-.columna {
+
+/* Contenedor principal, se centra y organiza las columnas */
+
+.section-container {
+    display: flex;
+    justify-content: center;
+    /* Centra las columnas horizontalmente */
+    align-items: flex-start;
+    /* Alinea las columnas en la parte superior */
+    gap: 20px;
+    /* Espacio entre las columnas */
+    padding: 20px;
+    /*fondo*/
+    height: 100%;
+    /* La altura ocupa toda la pantalla */
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    /* Permite que las columnas se acomoden en pantallas pequeñas */
+    margin-top: 100px;
+}
+
+
+/* Estilo para la columna de imágenes */
+
+.image-column {
+    display: flex;
+    flex-direction: column;
+    /* Las imágenes se apilan verticalmente */
+    gap: 10px;
+    /* Espacio entre las imágenes */
+    flex: 1 1 250px;
+    /* La columna de imágenes ocupa un mínimo de 250px */
+    max-width: 120px;
+    /* Limita el ancho máximo de la columna */
     background: #f8f8f8;
-    padding: 15px;
+    padding: 60px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 200px;
+    width: 100px;
     text-align: center;
 }
 
-.producto {
-    margin-bottom: 15px;
-}
-
-img {
-    width: 20%;
+.image-column img {
+    width: 80%;
+    /* Las imágenes ocupan el 100% del ancho de su contenedor */
     height: auto;
-    border-radius: 5px;
+    /* Mantiene la proporción de la imagen */
+    border-radius: 8px;
+    /* Bordes redondeados para las imágenes */
+    object-fit: cover;
+    /* Asegura que las imágenes no se deformen */
 }
 
-.precio {
-    font-weight: bold;
-    color: #333;
+
+/* Estilo para la columna de etiquetas */
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+    /* Las etiquetas se apilan verticalmente */
+    gap: 80px;
+    /* Espacio entre las etiquetas */
+    flex: 1 1 250px;
+    /* La columna de etiquetas ocupa un mínimo de 250px */
+    max-width: 280px;
+    /* Limita el ancho máximo de la columna */
+    padding-top: 25px;
 }
 
-.nuevo-precio {
-    color: red;
+.label {
+    font-size: 18px;
 }
 
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+
+/* Estilo para los botones */
+
+.botones {
+    position: fixed;
+    bottom: 30px;
+    /* Los botones estarán a 30px desde el borde inferior */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye los botones a la izquierda y derecha */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.boton-siguiente,
+.boton-home {
+    background-color: #388e3c;
+    /* Fondo verde ecológico */
     color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-button:hover {
-    background-color: #0056b3;
+.boton-siguiente:hover,
+.boton-home:hover {
+    background-color: #2e7d32;
+    /* Color más oscuro cuando pasa el ratón */
+    transform: scale(1.05);
+}
+
+.btnComparar {
+    background-color: #11a3dd;
+    /* Azul ecológico (puedes ajustar el color como prefieras) */
+    color: white;
+    /* Texto blanco */
+    border: none;
+    /* Sin borde */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    padding: 12px 20px;
+    /* Espaciado interior */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    cursor: pointer;
+    /* Cambiar el cursor al pasar el ratón */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Efectos de transición */
+}
+
+.btnComparar:hover {
+    background-color: #7dd2ee;
+    /* Efecto al pasar el ratón (color más oscuro) */
+    transform: scale(1.05);
+    /* Efecto de agrandamiento */
+}
+
+
+/* Estilo del select */
+
+.select {
+    background-color: #f0f8ff;
+    /* Fondo color azul claro */
+    border: 2px solid #4CAF50;
+    /* Borde verde (puedes cambiarlo según el estilo que quieras) */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 10px;
+    /* Espaciado interior */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    color: #333;
+    /* Color de texto */
+    width: 15%;
+    /* Ancho completo */
+    appearance: none;
+    /* Elimina el estilo predeterminado del navegador (si lo quieres más personalizado) */
+    -webkit-appearance: none;
+    /* Elimina el estilo predeterminado en Safari */
+    -moz-appearance: none;
+    /* Elimina el estilo predeterminado en Firefox */
+    cursor: pointer;
+    /* Cursor de mano cuando pasa sobre el select */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    /* Transiciones suaves */
+}
+
+
+/* Estilo cuando el select está enfocado (cuando el usuario hace clic en él) */
+
+.select:focus {
+    border-color: #45a049;
+    /* Borde verde más oscuro */
+    background-color: #e0f7e0;
+    /* Fondo más claro */
+    outline: none;
+    /* Eliminar el borde azul predeterminado */
+}
+
+
+/* Estilo para la flecha del select (cuando aparece en algunos navegadores) */
+
+.select::-ms-expand {
+    display: none;
+    /* Elimina la flecha en Internet Explorer */
+}
+
+
+/* Estilo cuando el select tiene opciones */
+
+.select option {
+    background-color: #f0f8ff;
+    /* Fondo para las opciones */
+    color: #333;
+    /* Color de texto para las opciones */
+    padding: 8px;
+    /* Espaciado entre las opciones */
+}
+
+
+/* Estilo cuando el select se pasa por encima */
+
+.select:hover {
+    border-color: #6f9c4c;
+    /* Borde un poco más oscuro al pasar el mouse */
+    background-color: #e7f7e7;
+    /* Fondo ligeramente más claro */
 }

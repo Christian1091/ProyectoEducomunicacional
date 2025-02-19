@@ -1,26 +1,101 @@
-<div class="contenedor">
-    <!-- Primera columna -->
-    <div class="columna">
-        <h3>Precios Actuales</h3>
-        <div *ngFor="let producto of productos" class="producto">
-            <img [src]="producto.img" alt="{{ producto.titulo }}">
-            <p>{{ producto.titulo }}</p>
-            <p class="precio">{{ producto.valor }}</p>
+<!-- <form [formGroup]="formulario"> -->
+<div class="plataforma-container">
+    <div class="section-container">
+        <div class="image-column">
+            <img src="../../../assets/icons/money.png" alt="Scooter">
+            <p class="label">Consumes: {{datos.seccionFour.precioGasolina}} dólares al año</p>
+            <img src="../../../assets/icons/electric.png" alt="Scooter">
+            <p class="label">No se calula</p>
+            <img src="../../../assets/icons/co2.png" alt="Scooter">
+            <p class="label">Emites: {{datos.seccionFour.emisionCo2}} kg Co2</p>
+            <img src="../../../assets/icons/arboles.png" alt="Scooter">
+            <p class="label">Recompensar con: {{datos.seccionFour.recomArbol}} árboles</p>
         </div>
     </div>
 
     <!-- Segunda columna (Oculta hasta hacer clic en "Comparar") -->
-    <div class="columna comparacion" *ngIf="mostrarComparacion">
-        <h3>Precios Comparados</h3>
-        <div *ngFor="let producto of productosComparacion" class="producto">
-            <img [src]="producto.img" alt="{{ producto.titulo }}">
-            <p>{{ producto.titulo }}</p>
-            <p class="precio nuevo-precio">{{ producto.valor }}</p>
-        </div>
+    <div class="columna comparacion; image-column" *ngIf="mostrarComparacion">
+
+        <img src="../../../assets/icons/money.png" alt="Scooter">
+        <p class="label">Consumes: {{datos.seccionFour.precioGasolina}} dólares al año</p>
+        <img src="../../../assets/icons/electric.png" alt="Scooter">
+        <p class="label">No se calula</p>
+        <img src="../../../assets/icons/co2.png" alt="Scooter">
+        <p class="label">Emites: {{datos.seccionFour.emisionCo2}} kg Co2</p>
+        <img src="../../../assets/icons/arboles.png" alt="Scooter">
+        <p class="label">Recompensar con: {{datos.seccionFour.recomArbol}} árboles</p>
     </div>
+    <!-- <div class="text-column">
+            <p class="label">Consumes: {{datos.seccionFour.precioGasolina}} dólares al año</p>
+            <p class="label">No se calula</p>
+            <p class="label">Emites: {{datos.seccionFour.emisionCo2}} kg Co2</p>
+            <p class="label">Recompensar con: {{datos.seccionFour.recomArbol}} árboles</p>
+        </div> -->
+</div>
+<!-- Botón para mostrar la comparación -->
+<div style="width: 100%; text-align: center;">
+    <div style="margin-bottom: 10px; margin-top: 10px;">
+        <button (click)="toggleComparacion()" class="btnComparar">
+        {{ mostrarComparacion ? 'Ocultar Comparación' : 'Comparar' }}
+      </button>
+    </div>
+
+
+    <!-- <div style="width: 100%; text-align: center;" >
+      <div style="margin-bottom: 10px;">
+        <button type="button" class="btnComparar" (click)="comparar()">COMPARAR</button>
+      </div>
+
+      <section *ngIf="this.compararValores">
+        <div >
+          <select id="dropPrincipal" formControlName="dropPrincipal" class="select">
+            <option value="">Seleccione una opción</option>
+            <option *ngFor="let opcion of opciones" [value]="opcion.id">
+              {{ opcion.label }}
+            </option>
+          </select>
+        </div>
+
+        <div style="margin-top: 1em;">
+          <select id="dropSecundario" class="select" formControlName="dropSecundario" (change)="valorSeleccionado()">
+            <option value="">Seleccione un medio</option>
+            <option *ngFor="let opcion of opcionesFiltrados" [value]="opcion.label">
+              {{ opcion.label }}
+            </option>
+
+          </select>
+        </div>
+
+
+        <div *ngIf="this.formulario.get('dropSecundario')?.value"
+          style="width: 100%; margin-top: 30px;">
+          <div style="text-align: center;">
+            Opción Seleccionada: {{this.formulario.get('dropSecundario')?.value}}
+          </div>
+        </div>
+
+        <div
+          style="color: red; width: 100%; margin-top: 30px;">
+          <div style="text-align: center;">
+            {{this.MensajeNotificacion}}
+          </div>
+        </div>
+      </section>-->
 </div>
 
-<!-- Botón para mostrar la comparación -->
-<button (click)="toggleComparacion()">
-  {{ mostrarComparacion ? 'Ocultar Comparación' : 'Comparar' }}
-</button>
+<!-- Botones en la parte inferior -->
+<!-- <div class="botones">
+      <button class="boton-home" (click)="goBackSeccionThree()">
+      <span class="material-icons">arrow_back</span>
+      </button>
+
+      <button class="boton-siguiente" (click)="goToNextSeccionHome()">
+      <span class="material-icons">arrow_forward</span>
+      </button>
+    </div>
+  </div> -->
+
+<div style="height: 200px;">
+
+</div>
+<!-- </form> -->

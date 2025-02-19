@@ -25,13 +25,9 @@ export class SecctionThreeComponent {
 
   constructor (private router: Router, private dataService: DataService){}
 
-  calcularCombustible() {
-
-  }
-
   enviar() {
     if(this.selectedOptionTrans == null || this.selectedOptionTrans == '') {
-      this.MensajeNotificacion = 'Debe seleccionar una opciÃ³n.'
+      this.MensajeNotificacion = 'Debe seleccionar una opción.'
       return;
     }
     if(this.selectedOptionTrans !== null) {
