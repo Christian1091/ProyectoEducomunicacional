@@ -4,118 +4,43 @@
 
         <div class="container">
 
-            <!--Combustion-->
+            <!-- Combustión -->
             <h3>COMBUSTION</h3>
             <div class="row">
-
                 <div class="radio-tile-group">
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="A Pie" [(ngModel)]="selectedOptionTrans">
+                    <div class="input-container" *ngFor="let option of combustionOptions">
+                        <input 
+                            [id]="option.value" 
+                            type="radio" 
+                            name="radio" 
+                            [value]="option.value" 
+                            [(ngModel)]="selectedOptionTrans"
+                            (change)="setTransportType('Combustión')">
                         <div class="radio-tile">
-                            <img src="../../../assets/icons/hombre.png" alt="Scooter">
-                            <label class="texto" for="walk">A Pie</label>
+                            <img [src]="option.img" [alt]="option.label">
+                            <label class="texto" [for]="option.value">{{ option.label }}</label>
                         </div>
                     </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Camioneta" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/camioneta.png" alt="Scooter">
-                            <label class="texto" for="walk">Camioneta</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Bicicleta" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/bicicleta.png" alt="Bicicleta">
-                            <label class="texto" for="walk">Bicicleta</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Moto" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/moto.png" alt="Moto">
-                            <label class="texto" for="walk">Moto</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Auto" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/carro.png" alt="Auto">
-                            <label class="texto" for="walk">Auto</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Bus" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/autobus.png" alt="Bus">
-                            <label class="texto" for="walk">Bus</label>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
 
+            <!-- Eléctricos -->
             <h3>ELECTRICOS</h3>
-            <!--Electricos-->
             <div class="row">
-
                 <div class="radio-tile-group">
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="A Pie" [(ngModel)]="selectedOptionTrans">
+                    <div class="input-container" *ngFor="let option of electricOptions">
+                        <input 
+                            [id]="option.value" 
+                            type="radio" 
+                            name="radio" 
+                            [value]="option.value" 
+                            [(ngModel)]="selectedOptionTrans"
+                            (change)="setTransportType('Eléctrico')">
                         <div class="radio-tile">
-                            <img src="../../../assets/icons/hombre.png" alt="Scooter">
-                            <label class="texto" for="walk">Poner un taxi</label>
+                            <img [src]="option.img" [alt]="option.label">
+                            <label class="texto" [for]="option.value">{{ option.label }}</label>
                         </div>
                     </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="ScooterElectrico" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/scooter.png" alt="Scooter">
-                            <label class="texto" for="walk">Scooter Eléctrico</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Bicicleta Eléctrica" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/bicicletaElec.png" alt="Scooter">
-                            <label class="texto" for="walk">Bicilieta Eléctrica</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Moto Eléctrica" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/motoElec.png" alt="Scooter">
-                            <label class="texto" for="walk">Moto Eléctrica</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Auto Eléctrico" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/autoElec.png" alt="Scooter">
-                            <label class="texto" for="walk">Auto Eléctrico</label>
-                        </div>
-                    </div>
-
-                    <div class="input-container">
-                        <input id="walk" type="radio" name="radio" value="Tranvía" [(ngModel)]="selectedOptionTrans">
-                        <div class="radio-tile">
-                            <img src="../../../assets/icons/tranvia.png" alt="Scooter">
-                            <label class="texto" for="walk">Tranvía</label>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
@@ -132,3 +57,4 @@
         </div>
     </div>
 </form>
+

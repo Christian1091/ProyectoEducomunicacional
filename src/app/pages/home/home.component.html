@@ -1,20 +1,25 @@
 <div class="plataforma-container">
-    <h1 class="titulo">PLATAFORMA</h1>
-    <h1 class="titulo">EDUCOMUNICACIONAL</h1>
-    <div class="resumen">
-        <div class="card-container">
+    <div class="texto-container">
+        <h1 class="titulo">PLATAFORMA</h1>
+        <h1 class="titulo">EDUCOMUNICACIONAL</h1>
+        <div class="resumen">
             <div class="card">
                 <div class="card-body">
                     <p>
-                        Los vehículos eléctricos son más beneficiosos para el medio ambiente debido a su menor huella de carbono y la ausencia de emisiones durante su operación. Sin embargo, la infraestructura y los costos siguen siendo desafíos a superar. Por otro lado, los
-                        vehículos de combustión interna siguen siendo populares por su mayor autonomía y la infraestructura de recarga disponible, pero son menos sostenibles a largo plazo debido a su impacto ambiental negativo.
+                        Los vehículos eléctricos son más beneficiosos para el medio ambiente debido a su menor huella de carbono y la ausencia de emisiones durante su operación. Sin embargo, la infraestructura y los costos siguen siendo desafíos a superar.
+                        Por otro lado, los vehículos de combustión interna siguen siendo populares por su mayor autonomía y la infraestructura de recarga disponible, pero son menos sostenibles a largo plazo debido a su impacto ambiental negativo.
                     </p>
                 </div>
             </div>
         </div>
+
+        <!-- Botón centrado -->
+        <div class="boton-container">
+            <button (click)="goToNextSeccionOne()" class="boton-ecologico">Aprende más</button>
+        </div>
     </div>
-    <img src="../../../assets/icons/fondo.jpg" alt="fondo" class="image-bottom-right fade-in">
-    <form>
-        <button (click)="goToNextSeccionOne()" class="boton-ecologico">Aprende más</button>
-    </form>
+
+    <div class="imagen-container">
+        <img src="../../../assets/icons/fondo.jpg" alt="fondo" class="image-bottom-right fade-in">
+    </div>
 </div>

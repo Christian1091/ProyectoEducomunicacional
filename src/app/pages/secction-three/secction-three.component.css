@@ -1,7 +1,7 @@
 /* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
 
 .plataforma-container {
-    height: 100vh;
+    height: 160vh;
     /* Ocupa el 100% de la altura de la ventana */
     background: linear-gradient(to right, #a8e6cf, #ffffff);
     /* Fondo ecológico mezclado con blanco */
@@ -17,10 +17,10 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     /* Asegura que el padding no afecte el tamaño del contenedor */
-    position: relative;
+    /* position: relative; */
     /* Necesario para el posicionamiento de los botones */
     --primary-color: #13942fea;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .titulo {
@@ -33,7 +33,7 @@
     animation: fadeIn 2s ease-out;
     /* Animación de aparición */
     margin-bottom: 20px;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .container {

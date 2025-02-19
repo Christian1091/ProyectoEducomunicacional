@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -9,9 +9,12 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   templateUrl: './secction-four.component.html',
   styleUrl: './secction-four.component.css'
 })
-export class SecctionFourComponent {
+export class SecctionFourComponent implements OnInit {
 
   mostrarComparacion = false; // Controla la visibilidad de la segunda columna
+  //opcionesComparacion: string[] = [];
+  opcionSeleccionada: string = '';
+  opcionesComparacion: { label: string, value: string, img: string }[] = [];
 
   productos = [
     { img: 'assets/icons/money.png', titulo: 'Producto 1', valor: '$27.37' },
@@ -20,15 +23,20 @@ export class SecctionFourComponent {
     { img: 'assets/icons/arboles.png', titulo: 'Producto 4', valor: '138' }
   ];
 
-  productosComparacion = [
-    { img: 'assets/icons/money.png', titulo: 'Producto 1', valor: '$100' },
-    { img: 'assets/icons/electric.png', titulo: 'Producto 2', valor: '$200' },
-    { img: 'assets/icons/co2.png', titulo: 'Producto 3', valor: '$300' },
-    { img: 'assets/icons/arboles.png', titulo: 'Producto 4', valor: '$400' }
-  ];
+  // productosComparacion = [
+  //   { img: 'assets/icons/money.png', titulo: 'Producto 1', valor: '$100' },
+  //   { img: 'assets/icons/electric.png', titulo: 'Producto 2', valor: '$200' },
+  //   { img: 'assets/icons/co2.png', titulo: 'Producto 3', valor: '$300' },
+  //   { img: 'assets/icons/arboles.png', titulo: 'Producto 4', valor: '$400' }
+  // ];
 
   toggleComparacion() {
     this.mostrarComparacion = !this.mostrarComparacion;
+
+    // Si se oculta el ComboBox, también se oculta la segunda columna
+    if (!this.mostrarComparacion) {
+      this.opcionSeleccionada = "";
+    }
   }
 
   /*formulario: FormGroup;
@@ -104,9 +112,31 @@ export class SecctionFourComponent {
   ngOnInit() {
     this.datos = this.dataService.obtenerData();
     console.log(this.datos);
+    const transporteSeleccionado = this.dataService.getTransportType();
+    const comb = this.dataService.getTransportType(); 
+    const combustionOptions = this.dataService.getCombustionOptions();
+    const electricOptions = this.dataService.getElectricOptions();
+    
+    
+    console.log(`🚗 Transporte obtenido en Sección 4: ${transporteSeleccionado}`);
+    console.log('🔥 Opciones de combustión obtenidas:', combustionOptions);
+    console.log('⚡ Opciones eléctricas obtenidas:', electricOptions);
+    
 
+     // Determinar las opciones que mostrar según el transporte seleccionado
+     if (transporteSeleccionado === 'Combustión') {
+      this.opcionesComparacion = electricOptions;  // Mostrar opciones eléctricas
+    } else if (transporteSeleccionado === 'Eléctrico') {
+      this.opcionesComparacion = combustionOptions; // Mostrar opciones de combustión
+    }
+
+     // Si hay opciones, seleccionar la primera
+     if (this.opcionesComparacion.length > 0) {
+      this.opcionSeleccionada = this.opcionesComparacion[0].value;
+    }
+
+        console.log('Transporte seleccionado Vd:', transporteSeleccionado);
   }
-
 
   /*goToNextSeccionHome() {
     this.router.navigateByUrl('/home');
@@ -124,4 +154,8 @@ export class SecctionFourComponent {
       this.selectedOption = navigation.extras.state['selectedOption'];
     }
   }*/
+ // Método que se ejecuta cuando se selecciona una opción del ComboBox
+  onSeleccionCambio() {
+    console.log("Opción seleccionada:", this.opcionSeleccionada);
+  }
 }
