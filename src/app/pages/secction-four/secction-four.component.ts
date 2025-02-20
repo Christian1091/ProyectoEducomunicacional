@@ -44,20 +44,16 @@ export class SecctionFourComponent implements OnInit {
   constructor(
     private router: Router,
     private dataService: DataService){}
-    
+
 
   datos: any;
 
-  
+
   ngOnInit() {
     this.datos = this.dataService.obtenerData();
     console.log(this.datos);
-    
   }
 
-  
-  
- // Método que se ejecuta cuando se selecciona una opción del ComboBox
   onSeleccionCambio() {
     console.log("Opción seleccionada:", this.opcionSeleccionada);
     // Mostrar la segunda columna solo después de seleccionar una opción

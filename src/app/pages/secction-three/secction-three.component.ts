@@ -13,9 +13,16 @@ export class SecctionThreeComponent {
   transportType: string = ''; // Guarda si es Combustión o Eléctrico
   MensajeNotificacion = '';
 
+  // Eléctrico
+
+
+
+  // Combustion
+
   distSemanal: number = 0;
   litroConsumido: number = 0;
   precioLitro: number = 0;
+  /**48 semanas son 1 año cada mes tiene 4 semanas 4*12 =48 */
   tiempo: number = 48;
   costGasoAnual: number= 0;
 
@@ -52,7 +59,7 @@ export class SecctionThreeComponent {
     console.log(`Transporte seleccionado: ${this.selectedOptionTrans} - Tipo: ${this.transportType}`);
   }
 
-  
+
   enviar() {
     if(this.selectedOptionTrans == null || this.selectedOptionTrans == '') {
       this.MensajeNotificacion = 'Debe seleccionar una opción.';
@@ -81,8 +88,13 @@ export class SecctionThreeComponent {
       //Calcular emision Co2
       this.co2 = parseFloat((this.emiCo2 * this.distSemanal).toFixed(2));
 
-      //Recompensar Ã¡rboles
+      //Recompensar arboles
       this.numArb = Math.round(this.co2 / 0.27);
+
+
+      /* Calculos para transporte electrico */
+
+
 
       this.dataService.saveDataFour({precioGasolina: this.costGasoAnual, emisionCo2: this.co2, recomArbol: this.numArb});
       this.dataService.setTransportType(this.transportType);
@@ -91,12 +103,42 @@ export class SecctionThreeComponent {
       console.log('selectedOptionTrans ' + this.selectedOptionTrans, ' getElectricOptions ',this.dataService.getElectricOptions())
 
       this.router.navigateByUrl('/home/secctionFour');
+
+      this.verResultado();
     }
 
-   
 
   }
-  
+
+  verResultado()
+   {
+
+    // Calculo de consumo kw al dia
+    const distanciaKwDia = this.dataService.getKilometro() * 0.20;
+    console.log('Resultado consumo kw al dia => ' + distanciaKwDia);
+
+    // Calculo consumo kw semanal
+    const distanciaKwSemanal = distanciaKwDia * 5;
+    console.log('Resultado consumo kw semanal => ' + distanciaKwSemanal);
+
+    // Calculos consumos anual
+    const distanciaKwAnual = distanciaKwSemanal * this.tiempo;
+    console.log('Resultado consumo kw semanal => ' + distanciaKwAnual);
+
+    // Calcular Consumo anuala
+    const consumoAnualKw = parseFloat((distanciaKwAnual * 0.10).toFixed(2));
+    console.log('Resultado gasto kw semanal => ' + consumoAnualKw);
+
+    //Contaminacion Co2 anual
+    const contaCo2 = parseFloat((distanciaKwAnual * 0.3).toFixed(2));
+    console.log('Contamina Co2 al anio => ' + contaCo2);
+
+    // Sembrar arboles
+    const sembraArbol = Math.round(contaCo2/0.27);
+    console.log('Sembrar al anio => ' + sembraArbol);
+
+   }
+
 
   goToNextSeccionFour() {
     this.router.navigateByUrl('/home/secctionFour');

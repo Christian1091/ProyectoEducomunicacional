@@ -9,13 +9,7 @@
             <div class="row">
                 <div class="radio-tile-group">
                     <div class="input-container" *ngFor="let option of combustionOptions">
-                        <input 
-                            [id]="option.value" 
-                            type="radio" 
-                            name="radio" 
-                            [value]="option.value" 
-                            [(ngModel)]="selectedOptionTrans"
-                            (change)="setTransportType('Combustión')">
+                        <input [id]="option.value" type="radio" name="radio" [value]="option.value" [(ngModel)]="selectedOptionTrans" (change)="setTransportType('Combustión')">
                         <div class="radio-tile">
                             <img [src]="option.img" [alt]="option.label">
                             <label class="texto" [for]="option.value">{{ option.label }}</label>
@@ -29,13 +23,7 @@
             <div class="row">
                 <div class="radio-tile-group">
                     <div class="input-container" *ngFor="let option of electricOptions">
-                        <input 
-                            [id]="option.value" 
-                            type="radio" 
-                            name="radio" 
-                            [value]="option.value" 
-                            [(ngModel)]="selectedOptionTrans"
-                            (change)="setTransportType('Eléctrico')">
+                        <input [id]="option.value" type="radio" name="radio" [value]="option.value" [(ngModel)]="selectedOptionTrans" (change)="setTransportType('Eléctrico')">
                         <div class="radio-tile">
                             <img [src]="option.img" [alt]="option.label">
                             <label class="texto" [for]="option.value">{{ option.label }}</label>
@@ -57,4 +45,3 @@
         </div>
     </div>
 </form>
-
