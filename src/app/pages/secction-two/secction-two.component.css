@@ -191,3 +191,39 @@ input::placeholder {
     transform: translateY(0);
   }
 }
+
+
+
+
+.imagen-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-container {
+  display: flex;
+  justify-content: center;
+}
+
+.imagen {
+  width: 150px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column; /* Organiza las opciones en columna */
+  gap: 10px;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

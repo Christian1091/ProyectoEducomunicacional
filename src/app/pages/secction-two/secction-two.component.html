@@ -22,7 +22,11 @@
                     <input class="form-control" id="userInput" type="number" formControlName="otroValor" name="otroValor" placeholder="Ingrese los km" />
                   </div>
               </div>
+              
           </div>
+          <div class="imagen-container">
+            <img src="../../../assets/icons/carroElectrico.png" alt="fondo" class="image-bottom-right fade-in">
+        </div>
       </div>
 
       <div *ngIf="formulario.get('seleccionKM')?.touched"
@@ -44,8 +48,8 @@
           {{this.MensajeNotificacion}}
         </div>
       </div>
-
-      <div class="botones">
+      
+       <div class="botones">
           <button [routerLink]="['/home/secctionOne']" class="boton-home">
           <span class="material-icons">arrow_back</span>
         </button>

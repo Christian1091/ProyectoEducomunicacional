@@ -2,36 +2,41 @@
     <div class="plataforma-container">
         <p class="titulo">¿A dónde sueles dirigirte durante la semana habitualmente?</p>
 
-        <!-- preguntas.component.html -->
         <div class="card-container">
             <div class="card">
                 <div class="card-body">
-                    <div class="radio-group">
-                        <input type="radio" id="trabajo" name="actividad" [(ngModel)]="selectedOptionDestino" value="Trabajo">
-                        <label for="trabajo">Trabajo</label>
+                    
+                      <!-- Contenido con radio buttons -->
+                        <div class="contenido">
+                            <div class="radio-group">
+                                <input type="radio" id="trabajo" name="actividad" [(ngModel)]="selectedOptionDestino" value="Trabajo">
+                                <label for="trabajo">Trabajo</label>
 
-                        <input type="radio" id="estudios" name="actividad" [(ngModel)]="selectedOptionDestino" value="Estudios">
-                        <label for="estudios">Estudios</label>
+                                <input type="radio" id="estudios" name="actividad" [(ngModel)]="selectedOptionDestino" value="Estudios">
+                                <label for="estudios">Estudios</label>
 
-                        <input type="radio" id="actividad-fisica" name="actividad" [(ngModel)]="selectedOptionDestino" value="Actividad Fisica">
-                        <label for="actividad-fisica">Actividad Física</label>
+                                <input type="radio" id="actividad-fisica" name="actividad" [(ngModel)]="selectedOptionDestino" value="Actividad Fisica">
+                                <label for="actividad-fisica">Actividad Física</label>
 
-                        <input type="radio" id="visita" name="actividad" [(ngModel)]="selectedOptionDestino" value="Visita Familiares/Amigos">
-                        <label for="visita">Visita Familiares/Amigos</label>
-
-                        <!-- <button type="submit">Enviar</button> -->
+                                <input type="radio" id="visita" name="actividad" [(ngModel)]="selectedOptionDestino" value="Visita Familiares/Amigos">
+                                <label for="visita">Visita Familiares/Amigos</label>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-            </div>
+                <div class="imagen-container">
+                    <img src="../../../assets/icons/carroElectrico.png" alt="fondo" class="image-bottom-right fade-in">
+                </div>
         </div>
 
         <!-- Botones en la parte inferior -->
         <div class="botones">
             <button (click)="goBackSeccionHome()" class="boton-home">
-              <span class="material-icons">home</span>
+                <span class="material-icons">home</span>
             </button>
             <button (click)="enviar()" class="boton-siguiente">
-              <span class="material-icons">arrow_forward</span>
+                <span class="material-icons">arrow_forward</span>
             </button>
         </div>
     </div>
