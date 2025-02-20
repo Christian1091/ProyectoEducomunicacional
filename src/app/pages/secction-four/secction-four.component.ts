@@ -1,43 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-
 @Component({
   selector: 'app-secction-four',
   templateUrl: './secction-four.component.html',
-  styleUrl: './secction-four.component.css'
+  styleUrl: './secction-four.component.css',
 })
-export class SecctionFourComponent implements OnInit {
-
+export class SecctionFourComponent {
   mostrarComparacion = false; // Controla la visibilidad de la segunda columna
-  //opcionesComparacion: string[] = [];
-  opcionSeleccionada: string = '';
-  opcionesComparacion: { label: string, value: string, img: string }[] = [];
 
-  productos = [
-    { img: 'assets/icons/money.png', titulo: 'Producto 1', valor: '$27.37' },
-    { img: 'assets/icons/electric.png', titulo: 'Producto 2', valor: '$200' },
-    { img: 'assets/icons/co2.png', titulo: 'Producto 3', valor: '$9.7' },
-    { img: 'assets/icons/arboles.png', titulo: 'Producto 4', valor: '138' }
-  ];
+  dropdownOpen = false;
 
-  // productosComparacion = [
-  //   { img: 'assets/icons/money.png', titulo: 'Producto 1', valor: '$100' },
-  //   { img: 'assets/icons/electric.png', titulo: 'Producto 2', valor: '$200' },
-  //   { img: 'assets/icons/co2.png', titulo: 'Producto 3', valor: '$300' },
-  //   { img: 'assets/icons/arboles.png', titulo: 'Producto 4', valor: '$400' }
-  // ];
+  options = ['Opción 1', 'Opción 2', 'Opción 3'];
 
-  toggleComparacion() {
-    this.mostrarComparacion = !this.mostrarComparacion;
+  constructor(private dataService: DataService) {}
 
-    // Si se oculta el ComboBox, también se oculta la segunda columna
-    if (!this.mostrarComparacion) {
-      this.opcionSeleccionada = "";
-    }
+
+  selectOption(option: string) {
+    console.log('Seleccionaste:', option);
+    this.dropdownOpen = false; // Cerrar el dropdown después de seleccionar
   }
+
+  /*toggleComparacion() {
+
+    //this.mostrarComparacion = !this.mostrarComparacion;
+  }*/
 
   /*formulario: FormGroup;
   opcionesFiltrados: any[] = [];
@@ -64,18 +53,18 @@ export class SecctionFourComponent implements OnInit {
       { id: '01', label: 'Auto' },
       { id: '02', label: 'Bus' },
     ],
-  };*/
+  };
 
   constructor(
     private router: Router,
-    private dataService: DataService){}
-    /*private fb: FormBuilder) {
+    private dataService: DataService,
+    private fb: FormBuilder) {
     this.formulario = this.fb.group({
       dropPrincipal: [''],
       dropSecundario: [{ value: '', disabled: true }],
-    });*/
+    });
 
-    /*this.formulario.get('dropPrincipal')?.valueChanges.subscribe((valorSeleccionado) => {
+    this.formulario.get('dropPrincipal')?.valueChanges.subscribe((valorSeleccionado) => {
       this.formulario.get('dropSecundario')?.setValue("");
       this.opcionesFiltrados = this.dataSet[valorSeleccionado] || [];
       if (this.opcionesFiltrados.length) {
@@ -103,7 +92,7 @@ export class SecctionFourComponent implements OnInit {
     this.compararValores = !this.compararValores
   }
 
-  selectedOption: string = '';*/
+  selectedOption: string = '';
 
   datos: any;
 
@@ -112,33 +101,10 @@ export class SecctionFourComponent implements OnInit {
   ngOnInit() {
     this.datos = this.dataService.obtenerData();
     console.log(this.datos);
-    const transporteSeleccionado = this.dataService.getTransportType();
-    const comb = this.dataService.getTransportType(); 
-    const combustionOptions = this.dataService.getCombustionOptions();
-    const electricOptions = this.dataService.getElectricOptions();
-    
-    
-    console.log(`🚗 Transporte obtenido en Sección 4: ${transporteSeleccionado}`);
-    console.log('🔥 Opciones de combustión obtenidas:', combustionOptions);
-    console.log('⚡ Opciones eléctricas obtenidas:', electricOptions);
-    
-
-     // Determinar las opciones que mostrar según el transporte seleccionado
-     if (transporteSeleccionado === 'Combustión') {
-      this.opcionesComparacion = electricOptions;  // Mostrar opciones eléctricas
-    } else if (transporteSeleccionado === 'Eléctrico') {
-      this.opcionesComparacion = combustionOptions; // Mostrar opciones de combustión
-    }
-
-     // Si hay opciones, seleccionar la primera
-     if (this.opcionesComparacion.length > 0) {
-      this.opcionSeleccionada = this.opcionesComparacion[0].value;
-    }
-
-        console.log('Transporte seleccionado Vd:', transporteSeleccionado);
   }
 
-  /*goToNextSeccionHome() {
+
+  goToNextSeccionHome() {
     this.router.navigateByUrl('/home');
   }
 
@@ -154,8 +120,4 @@ export class SecctionFourComponent implements OnInit {
       this.selectedOption = navigation.extras.state['selectedOption'];
     }
   }*/
- // Método que se ejecuta cuando se selecciona una opción del ComboBox
-  onSeleccionCambio() {
-    console.log("Opción seleccionada:", this.opcionSeleccionada);
-  }
 }
