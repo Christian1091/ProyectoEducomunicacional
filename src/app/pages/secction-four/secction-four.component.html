@@ -37,9 +37,9 @@
 
 <!-- ComboBox para seleccionar una alternativa, aparece solo cuando mostrarComparacion es true -->
 <div *ngIf="mostrarComparacion" style="width: 100%; text-align: center; margin-top: 15px;">
-    <label for="comparacionSelect">Selecciona una alternativa:</label>
-    <select id="comparacionSelect" [(ngModel)]="opcionSeleccionada" (change)="onSeleccionCambio()" class="select">
-    <option value="">Selecciona una opción</option>
+  <label for="comparacionSelect">Selecciona una alternativa:</label>
+  <select id="comparacionSelect" [(ngModel)]="opcionSeleccionada" (change)="onSeleccionCambio()" class="select">
+    <option value="">Seleccione una opción</option>
     <option *ngFor="let opcion of opcionesComparacion" [value]="opcion.value">
       {{ opcion.label }}
     </option>
