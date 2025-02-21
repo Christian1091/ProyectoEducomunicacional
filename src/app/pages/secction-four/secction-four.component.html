@@ -1,31 +1,154 @@
 <div class="plataforma-container">
-    <div class="section-container">
-        <div class="image-column">
-            <img src="../../../assets/icons/money.png" alt="Scooter">
-            <p class="label">Consumes: {{ datos.seccionFour.precioGasolina }} dólares al año</p>
-            <img src="../../../assets/icons/electric.png" alt="Scooter">
-            <p class="label">No se calcula</p>
-            <img src="../../../assets/icons/co2.png" alt="Scooter">
-            <p class="label">Emites: {{ datos.seccionFour.emisionCo2 }} kg CO₂</p>
-            <img src="../../../assets/icons/arboles.png" alt="Scooter">
-            <p class="label">Recompensar con: {{ datos.seccionFour.recomArbol }} árboles</p>
+  <div class="section-container">
+    <div class="image-column">
+      <ng-container *ngIf="tipoTransporte === 'Combustión'; else electricoBlock">
+        <img src="../../../assets/icons/money.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <p><strong>Costo operativo de movilizacion anual:</strong></p>
+            <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km.</strong>
+            <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
+          </div>
         </div>
-        <!-- Segunda columna, solo visible si se ha seleccionado una opción -->
-        <div class="image-column" *ngIf="opcionSeleccionada">
-            <img src="../../../assets/icons/money.png" alt="Scooter">
-            <p class="label">Consumes: {{ datos.seccionFour.precioGasolina }} dólares al año</p>
-            <img src="../../../assets/icons/electric.png" alt="Scooter">
-            <p class="label">No se calcula</p>
-            <img src="../../../assets/icons/co2.png" alt="Scooter">
-            <p class="label">Emites: {{ datos.seccionFour.emisionCo2 }} kg CO₂</p>
-            <img src="../../../assets/icons/arboles.png" alt="Scooter">
-            <p class="label">Recompensar con: {{ datos.seccionFour.recomArbol }} árboles</p>
+        <img src="../../../assets/icons/electric.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <p><strong>Costo operativo de movilizacion anual:</strong></p>
+            <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
+          </div>
         </div>
+        <img src="../../../assets/icons/co2.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <strong>Actualmente la emisión de C02 es de: {{ datosE.seccionFour.emisionCo2 }} kg Co2</strong>
+          </div>
+        </div>
+        <img src="../../../assets/icons/arboles.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datos.seccionFour.recomArbol }}
+              arboles</strong>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #electricoBlock>
+        <img src="../../../assets/icons/money.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <p><strong>Costo operativo de movilizacion anual:</strong></p>
+            <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km</strong>
+            <strong>Kw: ${{ datosE.seccionFour.precioKw }}</strong>
+            <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
+          </div>
+        </div>
+        <img src="../../../assets/icons/electric.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <p><strong>Costo operativo de movilizacion anual:</strong></p>
+            <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Kw: ${{ datosE.seccionFour.precioKw }}</strong>
+            <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
+          </div>
+        </div>
+        <img src="../../../assets/icons/co2.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <strong>Actualmente la emisión de C02 es de: {{ datos.seccionFour.emisionCo2 }} kg Co2</strong>
+          </div>
+        </div>
+        <img src="../../../assets/icons/arboles.png" alt="Scooter">
+        <div class="container">
+          <div class="label-box">
+            <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datos.seccionFour.recomArbol }}
+              arboles</strong>
+          </div>
+        </div>
+      </ng-template>
     </div>
+    <!-- Segunda columna, solo visible si se ha seleccionado una opción -->
+    <div class="image-column" *ngIf="opcionSeleccionada">
+      <ng-container *ngIf="tipoTransporte === 'Combustión'; else combustionBlock">
+      <img src="../../../assets/icons/money.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+        <p><strong>Costo operativo de movilizacion anual:</strong></p>
+          <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km</strong> 
+          <strong>kw: ${{ datosE.seccionFour.precioKw }}</strong> 
+          <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong> 
+          <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong> 
+        </div>
+      </div>
+      <img src="../../../assets/icons/electric.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+        <p><strong>Costo operativo de movilizacion anual:</strong></p>
+          <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong> 
+          <strong>Kw: ${{ datosE.seccionFour.precioKw }}</strong> 
+          <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong> 
+          <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong> 
+        </div>
+      </div>
+      <img src="../../../assets/icons/co2.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+           <strong>Actualmente la emisión de C02 es de: {{  datos.seccionFour.emisionCo2 }} kg Co2</strong> 
+        </div>
+      </div>
+      <img src="../../../assets/icons/arboles.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+           <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datos.seccionFour.recomArbol }} arboles</strong> 
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #combustionBlock>
+      <img src="../../../assets/icons/money.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+          <p><strong>Costo operativo de movilizacion anual:</strong></p>
+          <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km.</strong>
+          <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
+          <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
+          <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
+        </div>
+      </div>
+      <img src="../../../assets/icons/electric.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+          <p><strong>Costo operativo de movilizacion anual:</strong></p>
+          <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong>
+          <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
+          <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
+          <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
+        </div>
+      </div>
+      <img src="../../../assets/icons/co2.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+          <strong>Actualmente la emisión de C02 es de: {{ datosE.seccionFour.emisionCo2 }} kg Co2</strong>
+        </div>
+      </div>
+      <img src="../../../assets/icons/arboles.png" alt="Scooter">
+      <div class="container">
+        <div class="label-box">
+          <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datos.seccionFour.recomArbol }}
+            arboles</strong>
+        </div>
+      </div>
+    </ng-template>
+    </div>
+  </div>
 </div>
 <!-- Botón para mostrar/ocultar el ComboBox -->
 <div style="width: 100%; text-align: center;">
-    <button (click)="toggleComparacion()" class="btnComparar">
+  <button (click)="toggleComparacion()" class="btnComparar">
     {{ mostrarComparacion ? 'Ocultar Comparación' : 'Comparar' }}
   </button>
 </div>
@@ -33,8 +156,8 @@
 <!-- ComboBox para seleccionar una alternativa, aparece solo cuando mostrarComparacion es true -->
 <div *ngIf="mostrarComparacion" style="width: 100%; text-align: center; margin-top: 15px;">
 
-    <label for="comparacionSelect">Selecciona una alternativa:</label>
-    <select id="comparacionSelect" [(ngModel)]="opcionSeleccionada" (change)="onSeleccionCambio()" class="select">
+  <label for="comparacionSelect">Selecciona una alternativa:</label>
+  <select id="comparacionSelect" [(ngModel)]="opcionSeleccionada" (change)="onSeleccionCambio()" class="select">
     <option value="">Seleccione una opción</option>
     <option *ngFor="let opcion of opcionesComparacion" [value]="opcion.value">
       {{ opcion.label }}

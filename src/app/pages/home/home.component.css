@@ -134,3 +134,18 @@
         width: 90%;
     }
 }
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.image-bottom-right {
+    animation: fadeInRight 1.5s ease-out;
+}
