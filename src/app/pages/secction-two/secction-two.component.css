@@ -1,17 +1,14 @@
 /* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
 .plataforma-container {
-  height: 100vh;  /* Ocupa el 100% de la altura de la ventana */
+  height: auto;  /* Ocupa el 100% de la altura de la ventana */
   background: linear-gradient(to right, #a8e6cf, #ffffff); /* Fondo ecológico mezclado con blanco */
   display: flex;  /* Flexbox para organizar el contenido */
   flex-direction: column;  /* Los elementos se organizan de arriba hacia abajo */
-  /*justify-content: center;  /* Centra el contenido verticalmente */
-  /*align-items: center;  /* Centra el contenido horizontalmente */
-  /*text-align: left;  /* Alinea el texto a la izquierda */
-  /*padding: 20px;*/
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño del contenedor */
   position: relative;  /* Necesario para el posicionamiento de los botones */
+  margin: auto;
 }
 
 .titulo {
@@ -193,18 +190,13 @@ input::placeholder {
   }
 }
 
-
-
-
 .imagen-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.imagen-container {
-  display: flex;
-  justify-content: center;
+  position: relative;
+  left: 280px;
+  bottom: 30px;
 }
 
 .imagen {
@@ -229,17 +221,17 @@ input::placeholder {
   margin-top: 20px;
 }
 
-@keyframes rotateIn {
+@keyframes fadeInUp {
   from {
       opacity: 0;
-      transform: rotate(-90deg);
+      transform: translateY(50px);
   }
   to {
       opacity: 1;
-      transform: rotate(0);
+      transform: translateY(0);
   }
 }
-.image-bottom-right {
-  animation: rotateIn 1.5s ease-out;
-}
 
+.image-bottom-right {
+  animation: fadeInUp 1.5s ease-out;
+}
