@@ -1,7 +1,7 @@
 /* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
 
 .plataforma-container {
-    /* height: 100vh; */
+    height: auto;
     /* Ocupa el 100% de la altura de la ventana */
     background: linear-gradient(to right, #a8e6cf, #ffffff);
     /* Fondo ecológico mezclado con blanco */

@@ -19,16 +19,12 @@
                   </div>
 
                   <div *ngIf="this.formulario.get('seleccionKM')?.value !== undefined && this.formulario.get('seleccionKM')?.value === 0">
-                    <input class="form-control" id="userInput" type="number" formControlName="otroValor" name="otroValor" placeholder="Ingrese los km" />
+                    <input class="form-control input" id="userInput" type="number" formControlName="otroValor" name="otroValor" placeholder="Ingrese los km" />
                   </div>
               </div>
               
           </div>
       </div>
-      <div class="imagen-container">
-        <img src="../../../assets/icons/fondo4.png" alt="fondo" class="image-bottom-right fade-in">
-    </div>
-
       <div *ngIf="formulario.get('seleccionKM')?.touched"
       style="width: 100%; text-align: center; margin-top: 20px;">
 
@@ -41,7 +37,9 @@
           {{this.formulario.get('otroValor')?.value * 2}} km
         </ng-template>
       </div>
-
+      <div class="imagen-container">
+        <img src="../../../assets/icons/fondo4.png" alt="fondo" class="image-bottom-right fade-in">
+    </div>
       <div
         style="color: red; width: 100%; margin-top: 30px;">
         <div style="text-align: center;">
