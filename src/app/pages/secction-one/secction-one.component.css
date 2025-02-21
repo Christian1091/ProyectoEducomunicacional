@@ -1,6 +1,6 @@
 /* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
 .plataforma-container {
-  height: 100vh;  /* Ocupa el 100% de la altura de la ventana */
+  height: auto;  /* Ocupa el 100% de la altura de la ventana */
   background: linear-gradient(to right, #a8e6cf, #ffffff); /* Fondo ecológico mezclado con blanco */
   display: flex;  /* Flexbox para organizar el contenido */
   flex-direction: column;  /* Los elementos se organizan de arriba hacia abajo */
@@ -54,7 +54,7 @@
 }
 
 .card-body {
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .radio-group {
@@ -100,6 +100,7 @@ input[type="radio"]:checked + label:before {
   justify-content: space-between;  /* Distribuye los botones a la izquierda y derecha */
   padding: 0 20px;
   box-sizing: border-box;
+  z-index: 10; /* Un valor más alto que el de la imagen */
 }
 
 .boton-siguiente,
@@ -186,6 +187,10 @@ input[type="radio"]:checked + label:before {
 .imagen-container {
   display: flex;
   justify-content: center;
+  position: relative;
+  left: 180px;
+  bottom: 110px;
+  z-index: 0; /* O un valor menor que el de los botones */
 }
 
 .imagen {
@@ -224,3 +229,4 @@ input[type="radio"]:checked + label:before {
 .image-bottom-right {
   animation: fadeInUp 1.5s ease-out;
 }
+
