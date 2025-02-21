@@ -1,21 +1,21 @@
-<form  [formGroup]="this.formulario">
-  <div class="plataforma-container">
-      <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
+<form [formGroup]="this.formulario">
+    <div class="plataforma-container">
+        <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
 
-      <div class="card-container">
-          <div class="card">
-              <div class="card-body">
-                  <div class="radio-group">
-                    <div *ngFor="let km of kilometros">
-                      <input
-                      type="radio"
-                      [id]="km.id"
-                      [value]="km.value"
-                      formControlName="seleccionKM"
-                      (change)="onTouched()"
-                       />
-                      <label [for]="km.id">{{ km.label }}</label>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="radio-group">
+                        <div *ngFor="let km of kilometros">
+                            <input type="radio" [id]="km.id" [value]="km.value" formControlName="seleccionKM" (change)="onTouched()" />
+                            <label [for]="km.id">{{ km.label }}</label>
+                        </div>
                     </div>
+
+                    <div *ngIf="this.formulario.get('seleccionKM')?.value !== undefined && this.formulario.get('seleccionKM')?.value === 0">
+                        <input class="form-control input" id="userInput" type="number" formControlName="otroValor" name="otroValor" placeholder="Ingrese los km" />
+                    </div>
+
                   </div>
 
                   <div *ngIf="this.formulario.get('seleccionKM')?.value !== undefined && this.formulario.get('seleccionKM')?.value === 0">
@@ -28,34 +28,39 @@
       <div *ngIf="formulario.get('seleccionKM')?.touched"
       style="width: 100%; text-align: center; margin-top: 20px;">
 
-      <h3>Kilómetros de ida y vuelta</h3>
+
+    <div *ngIf="formulario.get('seleccionKM')?.touched" style="width: 100%; text-align: center; margin-top: 20px;">
+
+        <h3>Kilómetros de ida y vuelta</h3>
         <div *ngIf="this.formulario.get('seleccionKM')?.value > 0; else radios">
-          {{this.formulario.get('seleccionKM')?.value * 2}} km
+            {{this.formulario.get('seleccionKM')?.value * 2}} km
         </div>
 
-        <ng-template  #radios>
-          {{this.formulario.get('otroValor')?.value * 2}} km
+        <ng-template #radios>
+            {{this.formulario.get('otroValor')?.value * 2}} km
         </ng-template>
+
       </div>
       <div class="imagen-container">
         <img src="../../../assets/icons/fondo4.png" alt="fondo" class="image-bottom-right fade-in">
     </div>
       <div
         style="color: red; width: 100%; margin-top: 30px;">
+
         <div style="text-align: center;">
-          {{this.MensajeNotificacion}}
+            {{this.MensajeNotificacion}}
         </div>
-      </div>
-      
-       <div class="botones">
-          <button [routerLink]="['/home/secctionOne']" class="boton-home">
+    </div>
+
+    <div class="botones">
+        <button [routerLink]="['/home/secctionOne']" class="boton-home">
           <span class="material-icons">arrow_back</span>
         </button>
 
-          <button (click)="enviar()" class="boton-siguiente">
+        <button (click)="enviar()" class="boton-siguiente">
           <span class="material-icons">arrow_forward</span>
         </button>
-      </div>
+    </div>
 
-  </div>
+    </div>
 </form>
