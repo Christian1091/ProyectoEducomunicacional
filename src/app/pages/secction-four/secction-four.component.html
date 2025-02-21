@@ -145,18 +145,16 @@
     </ng-template>
     </div>
   </div>
-</div>
-<!-- Botón para mostrar/ocultar el ComboBox -->
+  <!-- Botón para mostrar/ocultar el ComboBox -->
 <div style="width: 100%; text-align: center;">
   <button (click)="toggleComparacion()" class="btnComparar">
     {{ mostrarComparacion ? 'Ocultar Comparación' : 'Comparar' }}
   </button>
 </div>
-
 <!-- ComboBox para seleccionar una alternativa, aparece solo cuando mostrarComparacion es true -->
 <div *ngIf="mostrarComparacion" style="width: 100%; text-align: center; margin-top: 15px;">
 
-  <label for="comparacionSelect">Selecciona una alternativa:</label>
+  <label for="comparacionSelect"></label>
   <select id="comparacionSelect" [(ngModel)]="opcionSeleccionada" (change)="onSeleccionCambio()" class="select">
     <option value="">Seleccione una opción</option>
     <option *ngFor="let opcion of opcionesComparacion" [value]="opcion.value">
@@ -164,3 +162,6 @@
     </option>
   </select>
 </div>
+</div>
+
+
