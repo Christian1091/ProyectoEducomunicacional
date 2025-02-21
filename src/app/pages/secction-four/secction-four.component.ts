@@ -47,11 +47,16 @@ export class SecctionFourComponent implements OnInit {
 
 
   datos: any;
+  datosE: any;
+  tipoTransporte:any;
 
 
   ngOnInit() {
     this.datos = this.dataService.obtenerData();
     console.log(this.datos);
+    this.datosE = this.dataService.obtenerDataE();
+    this.tipoTransporte = this.dataService.getTransportType();
+    console.log('transporte tipo compa',this.tipoTransporte);
   }
 
   onSeleccionCambio() {

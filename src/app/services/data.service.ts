@@ -11,6 +11,10 @@ export class DataService {
     seccionThree: { transporte: ''},
     seccionFour: { precioGasolina: 0, emisionCo2: 0, recomArbol: 0},
   }
+
+  private datosE = {
+      seccionFour: { precioKw: 0, emisionCo2: 0, recomArbol: 0},
+  }
   private dataThree: any = {}; // Datos de la sección 3
   private transportType: string = '';
   private combustionOptions: { label: string, value: string, img: string }[] = [];
@@ -22,7 +26,7 @@ export class DataService {
   saveDataOne(datos: {destino: string}) {
     this.datos.seccionOne = datos;
   }
-
+ 
   saveDataTwo(datos: {kilometro: number}) {
     this.datos.seccionTwo = datos;
   }
@@ -37,8 +41,16 @@ export class DataService {
     this.datos.seccionFour = datos;
   }
 
+  saveDataFourE(datos: {precioKw:number, emisionCo2:number, recomArbol:number}) {
+    this.datosE.seccionFour = datos;
+  }
+
   obtenerData() {
     return this.datos;
+  }
+
+  obtenerDataE() {
+    return this.datosE;
   }
 
   getKilometro(): number {

@@ -137,6 +137,8 @@ export class SecctionThreeComponent {
     const sembraArbol = Math.round(contaCo2/0.27);
     console.log('Sembrar al anio => ' + sembraArbol);
 
+    this.dataService.saveDataFourE({precioKw: consumoAnualKw, emisionCo2: contaCo2, recomArbol: sembraArbol});
+
    }
 
 

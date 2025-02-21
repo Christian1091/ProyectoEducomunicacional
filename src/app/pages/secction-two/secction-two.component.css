@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  gap: 100px;
 }
 
 .card {
@@ -227,3 +228,18 @@ input::placeholder {
   justify-content: space-between;
   margin-top: 20px;
 }
+
+@keyframes rotateIn {
+  from {
+      opacity: 0;
+      transform: rotate(-90deg);
+  }
+  to {
+      opacity: 1;
+      transform: rotate(0);
+  }
+}
+.image-bottom-right {
+  animation: rotateIn 1.5s ease-out;
+}
+
