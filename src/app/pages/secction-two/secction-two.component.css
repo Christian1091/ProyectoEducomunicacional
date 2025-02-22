@@ -1,14 +1,112 @@
 /* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
+
 .plataforma-container {
-  height: auto;  /* Ocupa el 100% de la altura de la ventana */
-  background: linear-gradient(to right, #a8e6cf, #ffffff); /* Fondo ecológico mezclado con blanco */
-  display: flex;  /* Flexbox para organizar el contenido */
-  flex-direction: column;  /* Los elementos se organizan de arriba hacia abajo */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;  /* Asegura que el padding no afecte el tamaño del contenedor */
-  position: relative;  /* Necesario para el posicionamiento de los botones */
-  margin: auto;
+    height: auto;
+    /* Ocupa el 100% de la altura de la ventana */
+    background: linear-gradient(to right, #a8e6cf, #ffffff);
+    /* Fondo ecológico mezclado con blanco */
+    display: flex;
+    /* Flexbox para organizar el contenido */
+    flex-direction: column;
+    /* Los elementos se organizan de arriba hacia abajo */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño del contenedor */
+    position: relative;
+    /* Necesario para el posicionamiento de los botones */
+    margin: auto;
+    height: 100vh;
+    /* Ocupa el 100% de la altura de la ventana */
+    background: linear-gradient(to right, #a8e6cf, #ffffff);
+    /* Fondo ecológico mezclado con blanco */
+    display: flex;
+    /* Flexbox para organizar el contenido */
+    flex-direction: column;
+    /* Los elementos se organizan de arriba hacia abajo */
+    /*justify-content: center;  /* Centra el contenido verticalmente */
+    /*align-items: center;  /* Centra el contenido horizontalmente */
+    /*text-align: left;  /* Alinea el texto a la izquierda */
+    /*padding: 20px;*/
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño del contenedor */
+    position: relative;
+    /* Necesario para el posicionamiento de los botones */
+}
+
+
+/* Estilo elegante para el input de tipo número */
+
+.input {
+    width: 100px;
+    /* Ancho del input */
+    padding: 12px 20px;
+    /* Espaciado interno */
+    font-size: 14px;
+    text-align: center;
+    /* Tamaño de la fuente */
+    color: #333;
+    /* Color del texto */
+    background-color: #fff;
+    /* Fondo blanco */
+    border: 1px solid #ccc;
+    /* Borde suave */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    transition: all 0.3s ease;
+    /* Transición suave para enfoque y cambio */
+    margin-top: 15px;
+}
+
+
+/* Estilo cuando el input de número está enfocado */
+
+.input:focus {
+    outline: none;
+    /* Elimina el borde predeterminado de enfoque */
+    border-color: #007bff;
+    /* Borde azul brillante al enfocar */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+    /* Sombra azul sutil */
+}
+
+
+/* Estilo para los valores del input */
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    /* Elimina las flechas por defecto de los números */
+    margin: 0;
+    /* Elimina el espacio alrededor */
+}
+
+
+/* Estilo para el input cuando está deshabilitado */
+
+.input:disabled {
+    background-color: #f5f5f5;
+    /* Fondo gris claro */
+    color: #aaa;
+    /* Color de texto gris */
+    cursor: not-allowed;
+    /* Cursor no permitido */
+    border-color: #ddd;
+    /* Borde gris claro */
+}
+
+
+/* Estilo para el placeholder */
+
+.input::placeholder {
+    color: #888;
+    /* Color gris claro */
+    font-style: italic;
+    /* Texto en cursiva */
 }
 
 /* Estilo elegante para el input de tipo número */
@@ -84,226 +182,267 @@
 } 
 
 .titulo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #388e3c;
-  text-transform: uppercase;
-  text-align: center;
-  animation: fadeIn 2s ease-out; /* Animación de aparición */
-  margin-bottom: 20px;
-  margin-top: 80px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #388e3c;
+    text-transform: uppercase;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+    /* Animación de aparición */
+    margin-bottom: 20px;
+    margin-top: 80px;
 }
 
 .card-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  gap: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 100px;
 }
 
 .card {
-  background-color: #ffffffe8;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 150px;
-  max-width: 150px;
-  padding: 20px;
-  margin: 10px;
-  overflow: hidden;
+    background-color: #ffffffe8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 150px;
+    max-width: 150px;
+    padding: 20px;
+    margin: 10px;
+    overflow: hidden;
 }
 
 .card-header {
-  margin-bottom: 20px;
-  text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .card-header h2 {
-  font-size: 24px;
-  color: #333;
+    font-size: 24px;
+    color: #333;
 }
 
 .card-body {
-  padding: 10px 0;
+    padding: 10px 0;
 }
 
 .radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 input[type="radio"] {
-  display: none; /* Esconde el radio button */
+    display: none;
+    /* Esconde el radio button */
 }
 
 label {
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  position: relative;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 label:before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: 2px solid #007BFF;
-  margin-right: 10px;
-  background-color: #fff;
-  transition: background-color 0.3s ease;
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #007BFF;
+    margin-right: 10px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
 }
 
-input[type="radio"]:checked + label:before {
-  background-color: #007BFF;
-  border-color: #0056b3;
+input[type="radio"]:checked+label:before {
+    background-color: #007BFF;
+    border-color: #0056b3;
 }
+
 
 /* Estilo para el input habilitado */
+
 input[type="text"] {
-  width: 150px;
-  padding: 5px;
-  text-align: center;
-  font-size: 16px;
-  margin-top: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+    width: 150px;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 input::placeholder {
-  text-align: center; /* Centra el texto del placeholder */
-  color: #888; /* Puedes ajustar el color del placeholder si lo deseas */
+    text-align: center;
+    /* Centra el texto del placeholder */
+    color: #888;
+    /* Puedes ajustar el color del placeholder si lo deseas */
 }
 
+
 /* Estilo para los botones */
+
 .botones {
-  position: fixed;
-  bottom: 30px;  /* Los botones estarán a 30px desde el borde inferior */
-  width: 100%;
-  display: flex;
-  justify-content: space-between;  /* Distribuye los botones a la izquierda y derecha */
-  padding: 0 20px;
-  box-sizing: border-box;
+    position: fixed;
+    bottom: 30px;
+    /* Los botones estarán a 30px desde el borde inferior */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* Distribuye los botones a la izquierda y derecha */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .boton-siguiente,
 .boton-home {
-  background-color: #388e3c;  /* Fondo verde ecológico */
-  color: white;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #388e3c;
+    /* Fondo verde ecológico */
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .boton-siguiente:hover,
 .boton-home:hover {
-  background-color: #2e7d32;  /* Color más oscuro cuando pasa el ratón */
-  transform: scale(1.05);
+    background-color: #2e7d32;
+    /* Color más oscuro cuando pasa el ratón */
+    transform: scale(1.05);
 }
+
 
 /* Responsividad para pantallas medianas (por ejemplo, tabletas) */
-@media (max-width: 768px) {
-  .titulo {
-    font-size: 2rem;  /* Reducir el tamaño del título */
-  }
 
-  /* Ajustar el tamaño de los botones para pantallas medianas */
-  .boton-siguiente,
-  .boton-home {
-    padding: 10px 25px;
-    font-size: 1rem;
-  }
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+        /* Reducir el tamaño del título */
+    }
+    /* Ajustar el tamaño de los botones para pantallas medianas */
+    .boton-siguiente,
+    .boton-home {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
-  .card {
-    padding: 15px;
-  }
-
-  .radio-group {
-    gap: 10px;
-  }
-
-  .card-header h2 {
-    font-size: 20px;
-  }
+    .card {
+        padding: 15px;
+    }
+    .radio-group {
+        gap: 10px;
+    }
+    .card-header h2 {
+        font-size: 20px;
+    }
 }
+
 
 /* Responsividad para pantallas pequeñas (teléfonos móviles) */
-@media (max-width: 480px) {
-  .titulo {
-    font-size: 1.5rem;  /* Reducir el tamaño del título */
-  }
 
-  /* Ajustar el tamaño de los botones para pantallas pequeñas */
-  .boton-siguiente,
-  .boton-home {
-    padding: 8px 20px;
-    font-size: 0.9rem;
-  }
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 1.5rem;
+        /* Reducir el tamaño del título */
+    }
+    /* Ajustar el tamaño de los botones para pantallas pequeñas */
+    .boton-siguiente,
+    .boton-home {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
 }
 
+
 /* Definir la animación */
+
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .imagen-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  left: 280px;
-  bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 280px;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-container {
+    display: flex;
+    justify-content: center;
 }
 
 .imagen {
-  width: 150px; /* Ajusta el tamaño según sea necesario */
-  height: auto;
+    width: 150px;
+    /* Ajusta el tamaño según sea necesario */
+    height: auto;
 }
 
 .contenido {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .radio-group {
-  display: flex;
-  flex-direction: column; /* Organiza las opciones en columna */
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    /* Organiza las opciones en columna */
+    gap: 10px;
 }
 
 .botones {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
 @keyframes fadeInUp {
-  from {
-      opacity: 0;
-      transform: translateY(50px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .image-bottom-right {
-  animation: fadeInUp 1.5s ease-out;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes rotateIn {
+    from {
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+
+.image-bottom-right {
+    animation: rotateIn 1.5s ease-out;
 }
