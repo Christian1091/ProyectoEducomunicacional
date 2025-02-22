@@ -1,7 +1,6 @@
 <form [formGroup]="this.formulario">
     <div class="plataforma-container">
         <p class="titulo">¿Cuántos kilómetros recorres habitualmente cada día para dirigirte a tu destino?</p>
-
         <div class="card-container">
             <div class="card">
                 <div class="card-body">
@@ -25,7 +24,7 @@
         </div>
 
     </div>
-    </div>
+
     <div class="imagen-container">
         <img src="../../../assets/icons/fondo4.png" alt="fondo" class="image-bottom-right fade-in">
     </div>
@@ -33,8 +32,6 @@
     <div class="imagen-container">
         <img src="../../../assets/icons/bicicletaElectrica.png" alt="fondo" class="image-bottom-right fade-in">
     </div>
-    </div>
-
 
     <div *ngIf="formulario.get('seleccionKM')?.touched" style="width: 100%; text-align: center; margin-top: 20px;">
 
@@ -64,5 +61,4 @@
         </button>
     </div>
 
-    </div>
 </form>
