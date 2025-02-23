@@ -9,19 +9,24 @@ export class DataService {
     seccionOne: { destino:''},
     seccionTwo: { kilometro: 0},
     seccionThree: { transporte: ''},
-    seccionFour: { precioGasolina: 0, emisionCo2: 0, recomArbol: 0},
+    seccionFour: { precioGasolina: 0, kilometrosAnuales:0, emisionCo2: 0, recomArbol: 0},
   }
+  private opcionSeleccionada: string = '';
 
   private datosE = {
       seccionFour: { precioKw: 0, emisionCo2: 0, recomArbol: 0},
   }
   private dataThree: any = {}; // Datos de la sección 3
   private transportType: string = '';
+  private transport: string = '';
   private combustionOptions: { label: string, value: string, img: string }[] = [];
   private electricOptions: { label: string, value: string, img: string }[] = [];
 
   constructor() { }
 
+  saveOpcionSeleccionada(opcion: string) {
+    this.opcionSeleccionada = opcion;
+  }
 
   saveDataOne(datos: {destino: string}) {
     this.datos.seccionOne = datos;
@@ -37,12 +42,16 @@ export class DataService {
     this.dataThree=this.datos.seccionThree
   }
 
-  saveDataFour(datos: {precioGasolina:number, emisionCo2:number, recomArbol:number}) {
+  saveDataFour(datos: {precioGasolina:number, kilometrosAnuales:number, emisionCo2:number, recomArbol:number}) {
     this.datos.seccionFour = datos;
   }
 
   saveDataFourE(datos: {precioKw:number, emisionCo2:number, recomArbol:number}) {
     this.datosE.seccionFour = datos;
+  }
+
+  obtenerOpcionSeleccionada():string {
+    return this.opcionSeleccionada;
   }
 
   obtenerData() {
@@ -71,6 +80,17 @@ export class DataService {
     // Método para obtener el tipo de transporte
     getTransportType(): string {
       return this.transportType;
+    }
+
+     // Método para guardar el transporte
+     setTransporte(type: string) {
+      this.transport = type;
+      console.log(`✅ Transporte guardado en servicio: ${this.transportType}`);
+    }
+  
+    // Método para obtener el transporte
+    getTransporte(): string {
+      return this.transport;
     }
 
     // Guardar las opciones de transporte
