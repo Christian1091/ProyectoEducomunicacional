@@ -61,9 +61,12 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 100px;
     text-align: center;
-    align-items: center; /* Centra horizontalmente */
-    flex-direction: column; /* Organiza los elementos en columna */
-    text-align: center; /* Asegura que el texto también esté centrado */
+    align-items: center;
+    /* Centra horizontalmente */
+    flex-direction: column;
+    /* Organiza los elementos en columna */
+    text-align: center;
+    /* Asegura que el texto también esté centrado */
 }
 
 .image-column img {
@@ -243,25 +246,60 @@ table td {
     /* Fondo ligeramente más claro */
 }
 
-
 .label-box {
-    border: 1px solid #333; /* Línea más visible */
+    border: 1px solid #333;
+    /* Línea más visible */
     padding: 20px;
     border-radius: 4px;
     background-color: #f9f9f9;
-    width: fit-content; /* Se ajusta al contenido */
-    width: 174%; /* Asegura un ancho definido */
+    width: fit-content;
+    /* Se ajusta al contenido */
+    width: 174%;
+    /* Asegura un ancho definido */
     display: flex;
     flex-direction: column;
-    align-items: center; /*Centra el contenido dentro del div*/
+    align-items: center;
+    /*Centra el contenido dentro del div*/
     /* text-align: center; Asegura que el texto también esté centrado */
-    
-  }
+}
+
 
 /* Asegura que el div esté centrado en la página */
+
 .container {
     display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  width: 174%; /* O un ancho específico si es necesario */
-  }
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    width: 174%;
+    /* O un ancho específico si es necesario */
+}
+
+.card {
+    width: 300px;
+    /* Ancho del card */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    border: 1px solid #ccc;
+    /* Borde sutil */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    padding: 20px;
+    background-color: white;
+    /* Fondo blanco */
+    margin: 10px;
+    /* Espaciado alrededor del card */
+    transition: all 0.3s ease;
+    /* Efecto de transición */
+}
+
+.card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    /* Sombra más fuerte al pasar el ratón */
+}
+
+.card-body {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}

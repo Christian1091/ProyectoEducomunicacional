@@ -8,6 +8,7 @@ import { SecctionOneComponent } from './secction-one/secction-one.component';
 import { SecctionThreeComponent } from './secction-three/secction-three.component';
 import { SecctionFourComponent } from './secction-four/secction-four.component';
 import { PagesComponent } from './pages.component';
+import { SecctionFiveComponent } from './secction-five/secction-five.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PagesComponent } from './pages.component';
     SecctionThreeComponent,
     SecctionFourComponent,
     PagesComponent,
+    SecctionFiveComponent,
   ],
   exports: [
     SecctionTwoComponent,

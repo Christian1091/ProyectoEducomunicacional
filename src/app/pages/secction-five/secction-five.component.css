@@ -1,0 +1,199 @@
+/* Contenedor que ocupa toda la pantalla y tiene fondo ecológico */
+
+.plataforma-container {
+    height: 100dvh;
+    /* Ocupa el 100% de la altura de la ventana */
+    background: linear-gradient(to right, #a8e6cf, #ffffff);
+    /* Fondo ecológico mezclado con blanco */
+    display: flex;
+    /* Flexbox para organizar el contenido */
+    flex-direction: column;
+    /* Los elementos se organizan de arriba hacia abajo */
+    /*justify-content: center;  /* Centra el contenido verticalmente */
+    /*align-items: center;  /* Centra el contenido horizontalmente */
+    /*text-align: left;  /* Alinea el texto a la izquierda */
+    /*padding: 20px;*/
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    /* Asegura que el padding no afecte el tamaño del contenedor */
+    position: relative;
+    /* Necesario para el posicionamiento de los botones */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    /* Alinea los elementos verticalmente al centro */
+    justify-content: space-between;
+    /* Espacia los elementos horizontalmente */
+    gap: 20px;
+    /* Espacio entre la imagen y el card */
+    margin: 20px;
+}
+
+.titulo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #388e3c;
+    text-transform: uppercase;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+    /* Animación de aparición */
+    margin-bottom: 20px;
+    margin-top: 80px;
+}
+
+
+/* Estilo del card */
+
+.card {
+    width: 80%;
+    /* Ancho del card */
+    max-width: 800px;
+    /* Tamaño máximo para evitar que se haga demasiado grande */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    border: 1px solid #ccc;
+    /* Borde sutil */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    background-color: white;
+    /* Fondo blanco */
+    padding: 20px;
+    transition: box-shadow 0.3s ease;
+    /* Transición suave de la sombra */
+}
+
+.card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    /* Sombra más fuerte al pasar el ratón */
+}
+
+
+/* Estilos internos del card */
+
+.card-header {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.card-body {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.container-buttom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    padding-right: 50px;
+    /* Ocupa toda la altura de la ventana */
+}
+
+
+/* Estilos ecológicos para el botón */
+
+.eco-button {
+    background-color: #4CAF50;
+    /* Verde ecológico */
+    color: white;
+    font-size: 16px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+
+/* Efecto hover (cuando el usuario pasa el ratón por encima) */
+
+.eco-button:hover {
+    background-color: #45a049;
+    /* Verde más oscuro */
+}
+
+
+/* Responsividad para pantallas medianas (por ejemplo, tabletas) */
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 2rem;
+        /* Reducir el tamaño del título */
+    }
+    /* Ajustar el tamaño de los botones para pantallas medianas */
+    .boton-siguiente,
+    .boton-home {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 15px;
+    }
+    .radio-group {
+        gap: 10px;
+    }
+    .card-header h2 {
+        font-size: 20px;
+    }
+}
+
+
+/* Responsividad para pantallas pequeñas (teléfonos móviles) */
+
+@media (max-width: 480px) {
+    .titulo {
+        font-size: 1.5rem;
+        /* Reducir el tamaño del título */
+    }
+    /* Ajustar el tamaño de los botones para pantallas pequeñas */
+    .boton-siguiente,
+    .boton-home {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Definir la animación */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.imagen-container {
+    /* Estilo de la imagen */
+    .image {
+        width: 150px;
+        /* Ancho de la imagen */
+        height: auto;
+        /* Mantiene la proporción de la imagen */
+        border-radius: 8px;
+        /* Bordes redondeados (opcional) */
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

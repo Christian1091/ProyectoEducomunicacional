@@ -7,6 +7,7 @@ import { SecctionTwoComponent } from './secction-two/secction-two.component';
 import { SecctionThreeComponent } from './secction-three/secction-three.component';
 import { SecctionFourComponent } from './secction-four/secction-four.component';
 import { HomeComponent } from './home/home.component';
+import { SecctionFiveComponent } from './secction-five/secction-five.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       { path:'secctionTwo', component: SecctionTwoComponent},
       { path:'secctionThree', component: SecctionThreeComponent},
       { path:'secctionFour', component: SecctionFourComponent},
+      { path:'secctionFive', component: SecctionFiveComponent}
 
     ]
   },
