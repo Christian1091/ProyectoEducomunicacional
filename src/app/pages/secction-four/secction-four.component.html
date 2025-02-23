@@ -1,3 +1,4 @@
+
 <div class="plataforma-container">
   <div class="section-container">
     <div class="image-column">
@@ -6,7 +7,7 @@
         <div class="container">
           <div class="label-box">
             <p><strong>Costo operativo de movilizacion anual:</strong></p>
-            <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km.</strong>
+            <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong>
             <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
             <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
             <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
@@ -16,7 +17,7 @@
         <div class="container">
           <div class="label-box">
             <p><strong>Costo operativo de movilizacion anual:</strong></p>
-            <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong>
             <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
             <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
             <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
@@ -41,7 +42,7 @@
         <div class="container">
           <div class="label-box">
             <p><strong>Costo operativo de movilizacion anual:</strong></p>
-            <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km</strong>
+            <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong>
             <strong>Kw: ${{ datosE.seccionFour.precioKw }}</strong>
             <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
             <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
@@ -51,7 +52,7 @@
         <div class="container">
           <div class="label-box">
             <p><strong>Costo operativo de movilizacion anual:</strong></p>
-            <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong>
+            <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong>
             <strong>Kw: ${{ datosE.seccionFour.precioKw }}</strong>
             <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
             <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
@@ -60,13 +61,13 @@
         <img src="../../../assets/icons/co2.png" alt="Scooter">
         <div class="container">
           <div class="label-box">
-            <strong>Actualmente la emisión de C02 es de: {{ datos.seccionFour.emisionCo2 }} kg Co2</strong>
+            <strong>Actualmente la emisión de C02 es de: {{ datosE.seccionFour.emisionCo2 }} kg Co2</strong>
           </div>
         </div>
         <img src="../../../assets/icons/arboles.png" alt="Scooter">
         <div class="container">
           <div class="label-box">
-            <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datos.seccionFour.recomArbol }}
+            <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datosE.seccionFour.recomArbol }}
               arboles</strong>
           </div>
         </div>
@@ -79,7 +80,7 @@
       <div class="container">
         <div class="label-box">
         <p><strong>Costo operativo de movilizacion anual:</strong></p>
-          <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km</strong> 
+          <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong> 
           <strong>kw: ${{ datosE.seccionFour.precioKw }}</strong> 
           <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong> 
           <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong> 
@@ -89,7 +90,7 @@
       <div class="container">
         <div class="label-box">
         <p><strong>Costo operativo de movilizacion anual:</strong></p>
-          <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong> 
+        <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong>
           <strong>Kw: ${{ datosE.seccionFour.precioKw }}</strong> 
           <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong> 
           <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong> 
@@ -98,13 +99,13 @@
       <img src="../../../assets/icons/co2.png" alt="Scooter">
       <div class="container">
         <div class="label-box">
-           <strong>Actualmente la emisión de C02 es de: {{  datos.seccionFour.emisionCo2 }} kg Co2</strong> 
+           <strong>Actualmente la emisión de C02 es de: {{  datosE.seccionFour.emisionCo2 }} kg Co2</strong> 
         </div>
       </div>
       <img src="../../../assets/icons/arboles.png" alt="Scooter">
       <div class="container">
         <div class="label-box">
-           <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datos.seccionFour.recomArbol }} arboles</strong> 
+           <strong>Para recompenzar la contaminación al ambiente hay que sembrar: {{ datosE.seccionFour.recomArbol }} arboles</strong> 
         </div>
       </div>
     </ng-container>
@@ -113,7 +114,7 @@
       <div class="container">
         <div class="label-box">
           <p><strong>Costo operativo de movilizacion anual:</strong></p>
-          <strong>Km recorridos: {{ datos.seccionTwo.kilometro }} km.</strong>
+          <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong>
           <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
           <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
           <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
@@ -123,7 +124,7 @@
       <div class="container">
         <div class="label-box">
           <p><strong>Costo operativo de movilizacion anual:</strong></p>
-          <strong>Km recorridos: {{ datos.seccionFour.precioGasolina }}</strong>
+          <strong>Km recorridos: {{ datos.seccionFour.kilometrosAnuales }} km.</strong>
           <strong>Gasolina: ${{ datos.seccionFour.precioGasolina }}</strong>
           <strong>Mantenimiento global: {{ datos.seccionFour.precioGasolina }}</strong>
           <strong>Matricula: {{ datos.seccionFour.precioGasolina }}</strong>
@@ -163,5 +164,3 @@
   </select>
 </div>
 </div>
-
-

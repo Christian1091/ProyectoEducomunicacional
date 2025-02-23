@@ -60,9 +60,10 @@ export class SecctionFourComponent implements OnInit {
   }
 
   onSeleccionCambio() {
-    console.log("Opción seleccionada:", this.opcionSeleccionada);
+    console.log("Opción seleccionadaV:", this.opcionSeleccionada);
     // Mostrar la segunda columna solo después de seleccionar una opción
     if (this.opcionSeleccionada) {
+      this.dataService.saveOpcionSeleccionada(this.opcionSeleccionada);
       this.mostrarComparacion = true;
     }
   }
